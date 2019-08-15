@@ -1,0 +1,67 @@
+/*!
+ * Project: Project Name
+ * Author: Name
+ * E-mail: E-mail
+ * Website:
+ */
+
+/**
+ * The structure is based on ITCSS with custom modifications.
+ *
+ * This is where all of the stylesheets are compiled.
+ * They are processed in the order they are imported
+ * to ensure the consistent increase of specificity.
+ *
+ *    ITCSS Methodology: Inverted Triangle CSS
+ *
+ *    ****************   1. Settings
+ *     **************    2. Tools
+ *      ************     3. Generic
+ *       **********      4. Elements
+ *        ********       5. Objects
+ *         ******        6. Components
+ *          ****         7. Modules
+ *           **          8. Utilities
+ *
+ * 1. Settings
+ *    Global configuration and variables.
+ *    Breakpoints, colors, spacing, utilities etc.
+ *
+ * 2. Tools
+ *    Functions and mixins.
+ *
+ * 3. Generic
+ *    Ground zero styles. No classes.
+ *
+ * 4. Elements
+ *    Unclassed (bare) HTML element.
+ *    H1, Ul, A etc.
+ *
+ * 5. Objects
+ *    Common non-cosmetic structural design patterns.
+ *    Containers, rows, grids, colums etc.
+ *
+ * 6. Components
+ *    Specific cosmetic elements of UI.
+ *    Buttons, forms etc.
+ *
+ * 7. Modules
+ *    Multi-part components.
+ *    Navbar, footer etc.
+ *
+ * 8. Utilities
+ *    Helpers and overrides.
+ *
+ *    Shame
+ *    All the CSS, hacks and things we are not proud of.
+ */
+
+@import '1-settings/**/*.scss';
+@import '2-tools/**/*.scss';
+@import '3-generic/**/*.scss';
+@import '4-elements/**/*.scss';
+@import '5-objects/**/*.scss';
+@import '6-components/**/*.scss';
+@import '7-modules/**/*.scss';
+@import '8-utilities/**/*.scss';
+@import 'shame';

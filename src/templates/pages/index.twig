@@ -1,0 +1,1799 @@
+{% extends '../layouts/default.twig' %}
+{% set head_title = 'Welcome' %}
+{% set body_class = 'bg-light' %}
+{% set menu_active = 'demo-page' %}
+
+{% block page %}
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.9/styles/dracula.min.css">
+
+  <style>
+    /* Inline styling for the demo purpose */
+    pre {
+      font-size: .875rem;
+      margin: 0;
+    }
+    .hljs {
+      padding-left: 1rem;
+    }
+    .demo-square,
+    .section {
+      border: 1px solid #ddd;
+    }
+    .demo-square {
+      vertical-align: middle;
+    }
+    .buttons .btn {
+      margin-bottom: .25rem;
+    }
+    table td,
+    .toggle {
+      border-bottom: 1px solid #ddd;
+    }
+    table td {
+      padding: .5rem .75rem;
+      font-size: .75rem;
+      cursor: text;
+      width: 50%;
+    }
+    .toggle {
+      transition: all .2s ease-in-out;
+    }
+    .toggle:hover {
+      text-decoration: none;
+      background-color: #f5f5f5;
+    }
+    .toggled {
+      background-color: #f2f2f2;
+    }
+  </style>
+
+  <div class="container px-4">
+
+    <div class="demo">
+
+      <div class="demo-content py-4">
+
+
+        <div class="flex flex-wrap -mx-2 mb-4">
+
+          <div class="w-full px-2">
+
+            <div class="bg-white p-4 section">
+
+              <h2 class="h4 mb-4 text-black">
+                Hybrid Utility ITCSS
+              </h2>
+              <p class="font-size-base mb-0">
+                Front-end boilerplate / ITCSS Architecture / CSS Utilities
+              </p>
+              <p class="font-size-base mb-2">
+                Gulp / Webpack / Babel / Live Reload / Twig.js
+              </p>
+              <p class="font-size-sm mb-0">
+                Based on best pieces from Bootstrap, Tailwind CSS and years of experience.
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div class="flex flex-wrap -mx-2 mb-8 font-size-xs">
+
+          <div class="w-full md:w-1/2 px-2">
+
+            <div class="bg-white p-4 mb-4 section hidden">
+
+              <h2 class="h3 mb-4 text-black">
+                Hybrid Utility ITCSS
+              </h2>
+              <p class="font-size-lg mb-0">
+                Front-end boilerplate / ITCSS Architecture / CSS Utilities
+              </p>
+              <p class="font-size-lg">
+                Gulp / Webpack / Babel / Live Reload / Twig.js
+              </p>
+              <p class="font-size-sm">
+                Based on best parts from Bootstrap, Tailwind CSS and years of experience.
+              </p>
+
+              <p class="font-size-sm">
+                Why not use Bootstrap or Tailwind?<br>
+                When you craft highly customized site then Bootstrap might be a bit overkill. Tailwind on other hand misses CSS architecture that ITCSS provides + we need to use Purgecss to limit the file size. It's tricky to add that in the setup in some cases when you work with many platforms/setups.
+              </p>
+            </div>
+
+            <div class="bg-white mb-4 section">
+
+              <p class="bg-dark text-white mb-0 p-2 px-3 font-size-base">
+                Settings
+              </p>
+
+              <div id="itcss-overview">
+                <a class="toggle block p-2 px-3 font-family-mono font-weight-semibold" href="#show-itcss-overview">
+                  ITCSS Overview
+                </a>
+                <div class="hidden" id="show-itcss-overview">
+                  <div class="highlight">
+                    <pre><code class="scss">
+ITCSS: Inverted Triangle CSS
+
+****************   1. Settings <span class="font-weight-bold text-success">(start your work here)</span>
+ **************    2. Tools
+  ************     3. Generic
+   **********      4. Elements
+    ********       5. Objects
+     ******        6. Components
+      ****         7. Modules <span class="font-weight-bold text-success">(most work will be done here)</span>
+       **          8. Utilities
+
+1. Settings
+   Global configuration and variables.
+   Breakpoints, colors, spacing, utilities etc.
+
+2. Tools
+   Functions and mixins.
+
+3. Generic
+   Ground zero styles. No classes.
+
+4. Elements
+   Unclassed (bare) HTML element.
+   H1, Ul, A etc.
+
+5. Objects
+   Common non-cosmetic structural design patterns.
+   Containers, rows, grids, colums etc.
+
+6. Components
+   Specific cosmetic elements of UI.
+   Buttons, forms etc.
+
+7. Modules
+   Multi-part components.
+   Navbar, footer etc.
+
+8. Utilities
+   Helpers and overrides.
+
+Shame
+All the CSS, hacks and things we are not proud of.
+                    </code></pre>
+                  </div>
+                </div>
+              </div>
+
+              <div id="s-breakpoints">
+                <a class="toggle block p-2 px-3 font-family-mono font-weight-semibold" href="#show-s-breakpoints">
+                  Breakpoints
+                </a>
+                <div class="hidden" id="show-s-breakpoints">
+                  <p class="font-size-sm my-4 ml-3">
+                    Define media query breakpoints.
+                  </p>
+                  <div class="highlight mb-8">
+                    <pre><code class="scss">
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1680px
+) !default;
+                    </code></pre>
+                  </div>
+
+                  <p class="font-size-sm my-4 ml-3">
+                    Define the maximum width of .container for different breakpoints.
+                  </p>
+                  <div class="highlight mb-8">
+                    <pre><code class="scss">
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px,
+  xxl: 1440px
+) !default;
+                    </code></pre>
+                  </div>
+
+                  <p class="font-size-sm my-4 ml-3">
+                    Responsive breakpoints. <span class="text-secondary">{screen}: utility name</span>
+                  </p>
+                  <div class="highlight mb-8">
+                    <pre><code class="html">
+&lt;div class=&quot;w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 xxl:w-1/6&quot;&gt;&lt;/div&gt;
+                    </code></pre>
+                  </div>
+
+                  <p class="font-size-sm my-4 ml-3">
+                    CSS media queries mixins
+                  </p>
+                  <div class="highlight">
+                    <pre><code class="scss">
+@include media-breakpoint-up(sm) {}
+@include media-breakpoint-up(md) {}
+@include media-breakpoint-up(lg) {}
+@include media-breakpoint-up(xl) {}
+@include media-breakpoint-up(xxl) {}
+
+@include media-breakpoint-down(xs) {}
+@include media-breakpoint-down(sm) {}
+@include media-breakpoint-down(md) {}
+@include media-breakpoint-down(lg) {}
+@include media-breakpoint-down(xxl) {}
+
+@include media-breakpoint-only(xs) {}
+@include media-breakpoint-only(sm) {}
+@include media-breakpoint-only(md) {}
+@include media-breakpoint-only(lg) {}
+@include media-breakpoint-only(xl) {}
+@include media-breakpoint-only(xxl) {}
+
+@include media-breakpoint-between(md, xl) {}
+                    </code></pre>
+                  </div>
+
+                </div>
+              </div>
+
+              <div id="s-colors">
+                <a class="toggle block p-2 px-3 font-family-mono font-weight-semibold" href="#show-s-colors">
+                  Colors
+                </a>
+                <div class="hidden" id="show-s-colors">
+                  <div class="highlight">
+                    <pre><code class="scss">
+// Colors
+$color-base: #4a5568 !default;
+$color-primary: #007bff !default;
+$text-secondary: #7f19e6 !default;
+$color-white: #fff !default;
+$color-light: #f2f2f2 !default;
+$color-dark: #343a40 !default;
+$color-black: #000 !default;
+$color-success: #00b300 !default;
+$color-error: #c00 !default;
+
+// Map used for generating CSS utility classes
+$colors: (
+  'base': $color-base,
+  'primary': $color-primary,
+  'secondary': $text-secondary,
+  'white': $color-white,
+  "light": $color-light,
+  "dark": $color-dark,
+  'black': $color-black,
+  'success': $color-success,
+  'error': $color-error
+) !default;
+
+// Links
+$color-link-color: #007bff !default;
+$color-link-color-hover: darken($color-link-color, 20%) !default;
+                    </code></pre>
+                  </div>
+                </div>
+              </div>
+
+              <div id="s-spacing">
+                <a class="toggle block p-2 px-3 font-family-mono font-weight-semibold" href="#show-s-spacing">
+                  Spacing
+                </a>
+                <div class="hidden" id="show-s-spacing">
+                  <div class="highlight">
+                    <pre><code class="scss">
+// Used for generating margin/padding CSS utility classes
+$spacer: 1rem !default;
+$spacers: (
+  0: 0,
+  1: $spacer * .25,
+  2: $spacer * .5,
+  3: $spacer * .75,
+  4: $spacer * 1,
+  5: $spacer * 1.25,
+  6: $spacer * 1.5,
+  8: $spacer * 2,
+  12: $spacer * 3
+  auto: auto,
+) !default;
+                    </code></pre>
+                  </div>
+                </div>
+              </div>
+
+              <div id="s-typo">
+                <a class="toggle block p-2 px-3 font-family-mono font-weight-semibold" href="#show-s-typo">
+                  Typography
+                </a>
+                <div class="hidden" id="show-s-typo">
+                  <div class="highlight">
+                    <pre><code class="scss">
+// Font Family
+$font-family-base: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
+$font-family-serif: Georgia, Cambria, "Times New Roman", Times, serif !default;
+$font-family-mono: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
+$font-family-headings: $font-family-base;
+
+// Font Size
+$font-size-xs: .75rem !default;
+$font-size-sm: .875rem !default;
+$font-size-base: .875rem !default;
+$font-size-lg: 1.125rem !default;
+$font-size-xl: 1.25rem !default;
+
+// Font Weight
+$font-weight-hairline: 100 !default;
+$font-weight-thin: 200 !default;
+$font-weight-light: 300 !default;
+$font-weight-normal: 400 !default;
+$font-weight-medium: 500 !default;
+$font-weight-semibold: 600 !default;
+$font-weight-bold: 700 !default;
+$font-weight-extrabold: 800 !default;
+$font-weight-black: 900 !default;
+
+// Line Height
+$line-height-none: 1 !default;
+$line-height-xs: 1.25 !default;
+$line-height-sm: 1.375 !default;
+$line-height-base: 1.5 !default;
+$line-height-lg: 1.625 !default;
+$line-height-xl: 2 !default;
+
+// Headings
+$headings-margin-bottom: 1rem !default;
+$headings-font-family: $font-family-headings !default;
+$headings-font-weight: $font-weight-medium !default;
+$headings-line-height: 1.2 !default;
+$headings-color: inherit !default;
+$headings-text-transform: inherit !default;
+
+// Headings Responsive Size
+$h1-font-size: ( xs: 20px, sm: 24px, md: 28px, lg: 32px, xl: 36px, xxl: 40px );
+$h2-font-size: ( xs: 18px, sm: 20px, md: 24px, lg: 28px, xl: 32px, xxl: 36px );
+$h3-font-size: ( xs: 16px, sm: 18px, md: 20px, lg: 24px, xl: 28px, xxl: 32px );
+$h4-font-size: ( xs: 16px, sm: 16px, md: 18px, lg: 22px, xl: 26px, xxl: 30px );
+$h5-font-size: ( xs: 16px, sm: 16px, md: 18px, lg: 20px, xl: 22px, xxl: 24px );
+$h6-font-size: ( xs: 16px, sm: 16px, md: 16px, lg: 18px, xl: 20px, xxl: 20px );
+
+// List
+$list-margin-bottom: 1rem !default;
+
+// Paragraph
+$paragraph-margin-bottom: 1rem !default;
+                    </code></pre>
+                  </div>
+                </div>
+              </div>
+
+              <div id="s-utilities">
+                <a class="toggle block p-2 px-3 font-family-mono font-weight-semibold" href="#show-s-utilities">
+                  Utilities
+                </a>
+                <div class="hidden" id="show-s-utilities">
+                  <div class="font-size-sm ml-3">
+                    <p class="pt-4">
+                      Customize responsiveness (true by default), attributes, classes etc.
+                    </p>
+                    <p>
+                      You can reduce file size by removing unused breakpoints
+                      or disabling unused utilities. Controlling file size:
+                    </p>
+                    <ul>
+                      <li>
+                        enable/disable generating utility classes <span class="text-secondary">$use-utilities: true/false;</span>
+                      </li>
+                      <li>
+                        enable/disable specific utility classes <span class="text-secondary">$utilities: map-remove(..)</span>
+                      </li>
+                      <li>
+                        enable/disable responsiveness for a specific utility class <span class="text-secondary">responsive: true/false</span>
+                      </li>
+                      <li>
+                        remove unused CSS using Purgecss
+                      </li>
+                    </ul>
+                    <p>
+                      File size:
+                    </p>
+                    <ul>
+                      <li>
+                        Including utilities with responsiveness: 85kb
+                      </li>
+                      <li>
+                        Including utilities without responsiveness: 23kb
+                      </li>
+                      <li>
+                        No utilities (raw ITCSS): 12kb
+                      </li>
+                      <li>
+                        Including utilties with responsiveness (layout only): 28kb
+                      </li>
+                      <li>
+                        Including utilities with responsiveness (layout + flexbox): 36kb
+                      </li>
+                    </ul>
+                    <p>
+                      Note: Spacing utilities (margin/padding) with responsiveness enabled add a lot to file size so consider whether you need them all.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="bg-white mb-4 section">
+
+              <p class="bg-dark text-white mb-0 p-2 px-3 font-size-base">
+                Backgrounds
+              </p>
+
+              <div id="u-bg-color">
+                <a class="toggle block p-2 px-3 font-family-mono font-weight-semibold" href="#show-u-bg-color">
+                  background-color
+                </a>
+                <div class="hidden" id="show-u-bg-color">
+                  <table class="font-family-mono">
+                    {% set list = {
+                      1: { class: ".bg-base", attr: "#4a5568" },
+                      2: { class: ".bg-primary", attr: "#007bff" },
+                      3: { class: ".bg-secondary", attr: "#7f19e6" },
+                      4: { class: ".bg-white", attr: "#fff" },
+                      5: { class: ".bg-light", attr: "#f8f9fa" },
+                      6: { class: ".bg-dark", attr: "#343a40" },
+                      7: { class: ".bg-black", attr: "#000" },
+                      8: { class: ".bg-success", attr: "#00b300" },
+                      9: { class: ".bg-error", attr: "#c00" },
+                    } %}
+                    {% for u in list %}
+                    <tr>
+                      <td>
+                        {{ u.class }}
+                      </td>
+                      <td>
+                        {{ u.attr }}
+                      </td>
+                      <td>
+                        <div class="p-3" style="background-color: {{ u.attr }};"></div>
+                      </td>
+                    </tr>
+                    {% endfor %}
+                  </table>
+                </div>
+              </div>
+
+              <div id="u-bg-size">
+                <a class="toggle block p-2 px-3 font-family-mono font-weight-semibold" href="#show-u-bg-size">
+                  background-size
+                </a>
+                <div class="hidden" id="show-u-bg-size">
+                  <table class="font-family-mono">
+                    {% set list = {
+                      1: { class: ".bg-auto", attr: "background-size: auto;" },
+                      2: { class: ".bg-cover", attr: "background-size: cover;" },
+                      3: { class: ".bg-contain", attr: "background-size: contain;" },
+                    } %}
+                    {% for u in list %}
+                    <tr>
+                      <td>{{ u.class }}</td>
+                      <td>{{ u.attr }}</td>
+                    </tr>
+                    {% endfor %}
+                  </table>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="bg-white mb-4 section">
+
+              <p class="bg-dark text-white mb-0 p-2 px-3 font-size-base">
+                Layout
+              </p>
+
+              <div id="u-container">
+                <a class="toggle block p-2 px-3 font-family-mono font-weight-semibold" href="#show-u-container">
+                  container
+                </a>
+                <div class="hidden" id="show-u-container">
+                  <table class="font-family-mono">
+                    <tr>
+                      <td>
+                        .container<br>
+                        .container-fluid
+                      </td>
+                      <td>
+                        width: 100%;
+                        <br>
+                        margin-left: auto;
+                        <br>
+                        margin-right: auto;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .container
+                      </td>
+                      <td>
+                        sm: max-width: 540px;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td>
+                        md: max-width: 720px;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td>
+                        lg: max-width: 960px;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td>
+                        xl: max-width: 1140px;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td>
+                        xxl: max-width: 1440px;
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+
+              <div id="u-display">
+                <a class="toggle block p-2 px-3 font-family-mono font-weight-semibold" href="#show-u-display">
+                  display
+                </a>
+                <div class="hidden" id="show-u-display">
+                  <table class="font-family-mono">
+                    {% set list = {
+                      1: { class: ".block", attr: "display: block;" },
+                      2: { class: ".inline-block", attr: "display: inline-block;" },
+                      3: { class: ".inline", attr: "display: inline;" },
+                      4: { class: ".flex", attr: "display: flex;" },
+                      5: { class: ".inline-flex", attr: "display: inline-flex;" },
+                      6: { class: ".table", attr: "display: table;" },
+                      7: { class: ".table-row", attr: "display: table-row;" },
+                      8: { class: ".table-cell", attr: "display: table-cell;" },
+                      8: { class: ".hidden", attr: "display: none;" },
+                    } %}
+                    {% for u in list %}
+                    <tr>
+                      <td>
+                        {{ u.class }}
+                      </td>
+                      <td>
+                        {{ u.attr }}
+                      </td>
+                    </tr>
+                    {% endfor %}
+                  </table>
+                </div>
+              </div>
+
+              <div id="u-position">
+                <a class="toggle block p-2 px-3 font-family-mono font-weight-semibold" href="#show-u-position">
+                  position
+                </a>
+                <div class="hidden" id="show-u-position">
+                  <table class="font-family-mono">
+                    {% set list = {
+                      1: { class: ".static", attr: "position: static;" },
+                      2: { class: ".fixed", attr: "position: fixed;" },
+                      3: { class: ".absolute", attr: "position: absolute;" },
+                      4: { class: ".relative", attr: "position: relative;" },
+                      5: { class: ".sticky", attr: "position: sticky;" },
+                    } %}
+                    {% for u in list %}
+                    <tr>
+                      <td>
+                        {{ u.class }}
+                      </td>
+                      <td>
+                        {{ u.attr }}
+                      </td>
+                    </tr>
+                    {% endfor %}
+                  </table>
+                </div>
+              </div>
+
+              <div id="u-top-right-bottom-left">
+                <a class="toggle block p-2 px-3 font-family-mono font-weight-semibold" href="#show-u-top-right-bottom-left">
+                  top-right-bottom-left
+                </a>
+                <div class="hidden" id="show-u-top-right-bottom-left">
+                  <table class="font-family-mono">
+                    {% set list = {
+                      1: { class: ".top-0", attr: "top: auto;" },
+                      2: { class: ".right-0", attr: "right: 0;" },
+                      3: { class: ".bottom-0", attr: "bottom: 0;" },
+                      4: { class: ".left-0", attr: "left: 0;" },
+                      5: { class: ".top-auto", attr: "top: auto;" },
+                      6: { class: ".right-auto", attr: "right: auto;" },
+                      7: { class: ".bottom-auto", attr: "bottom: auto;" },
+                      8: { class: ".left-auto", attr: "left: auto;" },
+                    } %}
+                    {% for u in list %}
+                    <tr>
+                      <td>
+                        {{ u.class }}
+                      </td>
+                      <td>
+                        {{ u.attr }}
+                      </td>
+                    </tr>
+                    {% endfor %}
+                  </table>
+                </div>
+              </div>
+
+              <div id="u-width">
+                <a class="toggle block p-2 px-3 font-family-mono font-weight-semibold" href="#show-u-width">
+                  width
+                </a>
+                <div class="hidden" id="show-u-width">
+                  <table class="font-family-mono">
+                    {% set list = {
+                      1: { class: ".w-1/2", attr: "width: 50%;" },
+                      2: { class: ".w-1/3", attr: "width: 33.333333%;" },
+                      3: { class: ".w-2/3", attr: "width: 66.666667%;" },
+                      4: { class: ".w-1/4", attr: "width: 25%;" },
+                      5: { class: ".w-2/4", attr: "width: 50%;" },
+                      6: { class: ".w-3/4", attr: "width: 75%;" },
+                      7: { class: ".w-1/5", attr: "width: 20%;" },
+                      8: { class: ".w-2/5", attr: "width: 40%;" },
+                      9: { class: ".w-3/5", attr: "width: 60%;" },
+                      10: { class: ".w-4/5", attr: "width: 80%;" },
+                      11: { class: ".w-1/6", attr: "width: 16.666667%;" },
+                      12: { class: ".w-2/6", attr: "width: 33.333333%;" },
+                      13: { class: ".w-3/6", attr: "width: 50%;" },
+                      14: { class: ".w-4/6", attr: "width: 66.666667%;" },
+                      15: { class: ".w-5/6", attr: "width: 83.333333%;" },
+                    } %}
+                    {% for u in list %}
+                    <tr>
+                      <td>
+                        {{ u.class }}
+                      </td>
+                      <td>
+                        {{ u.attr }}
+                      </td>
+                    </tr>
+                    {% endfor %}
+                  </table>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="bg-white mb-4 section">
+
+              <p class="bg-dark text-white mb-0 p-2 px-3 font-size-base">
+                Typography
+              </p>
+
+              <div id="u-text-color">
+                <a class="toggle block p-2 px-3 font-family-mono font-weight-semibold" href="#show-u-color">
+                  color
+                </a>
+                <div class="hidden" id="show-u-color">
+                  <table class="font-family-mono">
+                    {% set list = {
+                      1: { class: ".text-base", attr: "#4a5568" },
+                      2: { class: ".text-primary", attr: "#007bff" },
+                      3: { class: ".text-secondary", attr: "#7f19e6" },
+                      4: { class: ".text-white", attr: "#fff" },
+                      5: { class: ".text-light", attr: "#f8f9fa" },
+                      6: { class: ".text-dark", attr: "#343a40" },
+                      7: { class: ".text-black", attr: "#000" },
+                      8: { class: ".text-success", attr: "#00b300" },
+                      9: { class: ".text-error", attr: "#c00" },
+                    } %}
+                    {% for u in list %}
+                    <tr>
+                      <td>
+                        {{ u.class }}
+                      </td>
+                      <td>
+                        {{ u.attr }}
+                      </td>
+                      <td>
+                        <div class="p-3" style="background-color: {{ u.attr }};"></div>
+                      </td>
+                    </tr>
+                    {% endfor %}
+                  </table>
+                </div>
+              </div>
+
+              <div id="u-font-family">
+                <a class="toggle block p-2 px-3 font-family-mono font-weight-semibold" href="#show-u-family">
+                  font-family
+                </a>
+                <div class="hidden" id="show-u-family">
+                  <table class="font-family-mono">
+                    {% set list = {
+                      1: { class: ".font-family-base", attr: 'font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";' },
+                      2: { class: ".font-family-serif", attr: 'font-family: Georgia, Cambria, "Times New Roman", Times, serif;' },
+                      3: { class: ".font-family-mono", attr: 'font-family: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;' },
+                      5: { class: ".font-family-headings", attr: "= .font-family-base" },
+                    } %}
+                    {% for u in list %}
+                    <tr>
+                      <td>
+                        {{ u.class }}
+                      </td>
+                      <td>
+                        {{ u.attr }}
+                      </td>
+                    </tr>
+                    {% endfor %}
+                  </table>
+                </div>
+              </div>
+
+              <div id="u-font-size">
+                <a class="toggle block p-2 px-3 font-family-mono font-weight-semibold" href="#show-u-font-size">
+                  font-size
+                </a>
+                <div class="hidden" id="show-u-font-size">
+                  <table class="font-family-mono">
+                    {% set list = {
+                      1: { class: ".font-size-xs", attr: "font-size: .75rem;" },
+                      2: { class: ".font-size-sm", attr: "font-size: .875rem;" },
+                      3: { class: ".font-size-base", attr: "font-size: 1rem;" },
+                      4: { class: ".font-size-lg", attr: "font-size: 1.125rem;" },
+                      5: { class: ".font-size-xl", attr: "font-size: 1.25rem;" },
+                    } %}
+                    {% for u in list %}
+                    <tr>
+                      <td>
+                        {{ u.class }}
+                      </td>
+                      <td>
+                        {{ u.attr }}
+                      </td>
+                    </tr>
+                    {% endfor %}
+                  </table>
+                </div>
+              </div>
+
+              <div id="u-font-style">
+                <a class="toggle block p-2 px-3 font-family-mono font-weight-semibold" href="#show-u-font-style">
+                  font-style
+                </a>
+                <div class="hidden" id="show-u-font-style">
+                  <table class="font-family-mono">
+                    {% set list = {
+                      1: { class: ".italic", attr: "font-style: italic;" },
+                      2: { class: ".non-italic", attr: "font-style: normal;" },
+                    } %}
+                    {% for u in list %}
+                    <tr>
+                      <td>
+                        {{ u.class }}
+                      </td>
+                      <td>
+                        {{ u.attr }}
+                      </td>
+                    </tr>
+                    {% endfor %}
+                  </table>
+                </div>
+              </div>
+
+              <div id="u-weights">
+                <a class="toggle block p-2 px-3 font-family-mono font-weight-semibold" href="#show-u-weights">
+                  font-weight
+                </a>
+                <div class="hidden" id="show-u-weights">
+                  <table class="font-family-mono">
+                    {% set list = {
+                      1: { class: ".font-weight-hairline", attr: "font-weight: 100;" },
+                      2: { class: ".font-weight-thin", attr: "font-weight: 200;" },
+                      3: { class: ".font-weight-light", attr: "font-weight: 300;" },
+                      4: { class: ".font-weight: normal", attr: "font-weight: 400;" },
+                      6: { class: ".font-weight-medium", attr: "font-weight: 500;" },
+                      7: { class: ".font-weight-semibold", attr: "font-weight: 600;" },
+                      8: { class: ".font-weight-bold", attr: "font-weight: 700;" },
+                      9: { class: ".font-weight-extrabold", attr: "font-weight: 800;" },
+                      10: { class: ".font-weight-black", attr: "font-weight: 900;" },
+                    } %}
+                    {% for u in list %}
+                    <tr>
+                      <td>
+                        {{ u.class }}
+                      </td>
+                      <td>
+                        {{ u.attr }}
+                      </td>
+                    </tr>
+                    {% endfor %}
+                  </table>
+                </div>
+              </div>
+
+              <div id="u-line-height">
+                <a class="toggle block p-2 px-3 font-family-mono font-weight-semibold" href="#show-u-line-height">
+                  line-height
+                </a>
+                <div class="hidden" id="show-u-line-height">
+                  <table class="font-family-mono">
+                    {% set list = {
+                      1: { class: ".line-height-xs", attr: "line-height: 1rem;" },
+                      2: { class: ".line-height-sm", attr: "line-height: 1.25rem;" },
+                      3: { class: ".line-height-base", attr: "line-height: 1.375rem;" },
+                      4: { class: ".line-height-lg", attr: "line-height: 1.5rem;" },
+                      5: { class: ".line-height-xl", attr: "line-height: 2rem;" },
+                    } %}
+                    {% for u in list %}
+                    <tr>
+                      <td>
+                        {{ u.class }}
+                      </td>
+                      <td>
+                        {{ u.attr }}
+                      </td>
+                    </tr>
+                    {% endfor %}
+                  </table>
+                </div>
+              </div>
+
+              <div id="u-list-style-type">
+                <a class="toggle block p-2 px-3 font-family-mono font-weight-semibold" href="#show-u-list-style-type">
+                  list-style-type
+                </a>
+                <div class="hidden" id="show-u-list-style-type">
+                  <table class="font-family-mono">
+                    {% set list = {
+                      1: { class: ".list-none", attr: "list-style-type: none;" },
+                      2: { class: ".list-disc", attr: "list-style-type: disc;" },
+                      3: { class: ".list-decimal", attr: "list-style-type: decimal;" },
+                    } %}
+                    {% for u in list %}
+                    <tr>
+                      <td>
+                        {{ u.class }}
+                      </td>
+                      <td>
+                        {{ u.attr }}
+                      </td>
+                    </tr>
+                    {% endfor %}
+                  </table>
+                </div>
+              </div>
+
+              <div id="u-list-style-position">
+                <a class="toggle block p-2 px-3 font-family-mono font-weight-semibold" href="#show-u-list-style-position">
+                  list-style-position
+                </a>
+                <div class="hidden" id="show-u-list-style-position">
+                  <table class="font-family-mono">
+                    {% set list = {
+                      1: { class: ".list-inside", attr: "list-style-position: inside;" },
+                      2: { class: ".list-outside", attr: "list-style-position: outside;" },
+                    } %}
+                    {% for u in list %}
+                    <tr>
+                      <td>
+                        {{ u.class }}
+                      </td>
+                      <td>
+                        {{ u.attr }}
+                      </td>
+                    </tr>
+                    {% endfor %}
+                  </table>
+                </div>
+              </div>
+
+              <div id="u-text-align">
+                <a class="toggle block p-2 px-3 font-family-mono font-weight-semibold" href="#show-u-text-align">
+                  text-align
+                </a>
+                <div class="hidden" id="show-u-text-align">
+                  <table class="font-family-mono">
+                    {% set list = {
+                      1: { class: ".text-left", attr: "text-align: left;" },
+                      2: { class: ".text-center", attr: "text-align: center;" },
+                      3: { class: ".text-right", attr: "text-align: right;" },
+                      4: { class: ".text-justify", attr: "text-align: justify;" },
+                      5: { class: "", attr: "" },
+                    } %}
+                    {% for u in list %}
+                    <tr>
+                      <td>
+                        {{ u.class }}
+                      </td>
+                      <td>
+                        {{ u.attr }}
+                      </td>
+                    </tr>
+                    {% endfor %}
+                  </table>
+                </div>
+              </div>
+
+              <div id="u-text-decoration">
+                <a class="toggle block p-2 px-3 font-family-mono font-weight-semibold" href="#show-u-text-decoration">
+                  text-decoration
+                </a>
+                <div class="hidden" id="show-u-text-decoration">
+                  <table class="font-family-mono">
+                    {% set list = {
+                      1: { class: ".underline", attr: "text-decoration: underline;" },
+                      2: { class: ".line-through", attr: "text-decoration: line-through;" },
+                      3: { class: ".no-underline", attr: "text-decoration: none;" },
+                    } %}
+                    {% for u in list %}
+                    <tr>
+                      <td>
+                        {{ u.class }}
+                      </td>
+                      <td>
+                        {{ u.attr }}
+                      </td>
+                    </tr>
+                    {% endfor %}
+                  </table>
+                </div>
+              </div>
+
+              <div id="u-text-transform">
+                <a class="toggle block p-2 px-3 font-family-mono font-weight-semibold" href="#show-u-text-transform">
+                  text-transform
+                </a>
+                <div class="hidden" id="show-u-text-transform">
+                  <table class="font-family-mono">
+                    {% set list = {
+                      1: { class: ".uppercase", attr: "text-transform: uppercase;" },
+                      2: { class: ".lowercase", attr: "text-transform: lowercase;" },
+                      3: { class: ".capitalize", attr: "text-transform: capitalize;" },
+                      4: { class: ".normal-case", attr: "text-transform: none;" },
+                    } %}
+                    {% for u in list %}
+                    <tr>
+                      <td>
+                        {{ u.class }}
+                      </td>
+                      <td>
+                        {{ u.attr }}
+                      </td>
+                    </tr>
+                    {% endfor %}
+                  </table>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="w-full md:w-1/2 px-2">
+
+
+            <div class="bg-white mb-4 section">
+
+              <p class="bg-dark text-white mb-0 p-2 px-3 font-size-base">
+                Flexbox
+              </p>
+
+              <div id="u-flex-align-content">
+                <a class="toggle block p-2 px-3 font-family-mono font-weight-semibold" href="#show-u-flex-align-content">
+                  align-content
+                </a>
+                <div class="hidden" id="show-u-flex-align-content">
+                  <table class="font-family-mono">
+                    {% set list = {
+                      1: { class: ".content-start", attr: "align-content: flex-start;" },
+                      2: { class: ".content-center", attr: "align-content: center;" },
+                      3: { class: ".content-end", attr: "align-content: flex-end;" },
+                      4: { class: ".content-between", attr: "align-content: space-between;" },
+                      5: { class: ".content-around", attr: "align-content: space-around;" },
+                    } %}
+                    {% for u in list %}
+                    <tr>
+                      <td>
+                        {{ u.class }}
+                      </td>
+                      <td>
+                        {{ u.attr }}
+                      </td>
+                    </tr>
+                    {% endfor %}
+                  </table>
+                </div>
+              </div>
+
+              <div id="u-flex-align-items">
+                <a class="toggle block p-2 px-3 font-family-mono font-weight-semibold" href="#show-u-flex-align-items">
+                  align-items
+                </a>
+                <div class="hidden" id="show-u-flex-align-items">
+                  <table class="font-family-mono">
+                    {% set list = {
+                      1: { class: ".items-stretch", attr: "align-items: stretch;" },
+                      2: { class: ".items-start", attr: "align-items: stretch;" },
+                      3: { class: ".items-center", attr: "align-items: center;" },
+                      4: { class: ".items-end", attr: "align-items: flex-end;" },
+                      5: { class: ".items-baseline", attr: "align-items: baseline;" },
+                    } %}
+                    {% for u in list %}
+                    <tr>
+                      <td>
+                        {{ u.class }}
+                      </td>
+                      <td>
+                        {{ u.attr }}
+                      </td>
+                    </tr>
+                    {% endfor %}
+                  </table>
+                </div>
+              </div>
+
+              <div id="u-flex-align-self">
+                <a class="toggle block p-2 px-3 font-family-mono font-weight-semibold" href="#show-u-flex-align-self">
+                  align-self
+                </a>
+                <div class="hidden" id="show-u-flex-align-self">
+                  <table class="font-family-mono">
+                    {% set list = {
+                      1: { class: ".self-auto", attr: "align-self: auto;" },
+                      2: { class: ".self-start", attr: "align-self: flex-start;" },
+                      3: { class: ".self-center", attr: "align-self: center;" },
+                      4: { class: ".self-end", attr: "align-self: flex-end;" },
+                      5: { class: ".self-stretch", attr: "align-self: stretch;" },
+                    } %}
+                    {% for u in list %}
+                    <tr>
+                      <td>
+                        {{ u.class }}
+                      </td>
+                      <td>
+                        {{ u.attr }}
+                      </td>
+                    </tr>
+                    {% endfor %}
+                  </table>
+                </div>
+              </div>
+
+              <div id="u-flex">
+                <a class="toggle block p-2 px-3 font-family-mono font-weight-semibold" href="#show-u-flex">
+                  flex
+                </a>
+                <div class="hidden" id="show-u-flex">
+                  <table class="font-family-mono">
+                    {% set list = {
+                      1: { class: ".flex-initial", attr: "flex: 0 1 auto;" },
+                      2: { class: ".flex-1", attr: "flex: 1 1 0%;" },
+                      3: { class: ".flex-auto", attr: "flex: 1 1 auto;" },
+                      4: { class: ".flex-none", attr: "flex: none;" },
+                    } %}
+                    {% for u in list %}
+                    <tr>
+                      <td>
+                        {{ u.class }}
+                      </td>
+                      <td>
+                        {{ u.attr }}
+                      </td>
+                    </tr>
+                    {% endfor %}
+                  </table>
+                </div>
+              </div>
+
+              <div id="u-flex-direction">
+                <a class="toggle block p-2 px-3 font-family-mono font-weight-semibold" href="#show-u-flex-direction">
+                  flex-direction
+                </a>
+                <div class="hidden" id="show-u-flex-direction">
+                  <table class="font-family-mono">
+                    {% set list = {
+                      1: { class: ".flex-row", attr: "flex-direction: row;" },
+                      2: { class: ".flex-row-reverse", attr: "flex-direction: row-reverse;" },
+                      3: { class: ".flex-col", attr: "flex-direction: column;" },
+                      4: { class: ".flex-col-reverse", attr: "flex-direction: column-reverse;" },
+                    } %}
+                    {% for u in list %}
+                    <tr>
+                      <td>
+                        {{ u.class }}
+                      </td>
+                      <td>
+                        {{ u.attr }}
+                      </td>
+                    </tr>
+                    {% endfor %}
+                  </table>
+                </div>
+              </div>
+
+              <div id="u-flex-grow">
+                <a class="toggle block p-2 px-3 font-family-mono font-weight-semibold" href="#show-u-flex-grow">
+                  flex-grow
+                </a>
+                <div class="hidden" id="show-u-flex-grow">
+                  <table class="font-family-mono">
+                    {% set list = {
+                      1: { class: ".flex-grow", attr: "flex-grow: 1;" },
+                      2: { class: ".flex-grow-0", attr: "flex-grow: 0;" },
+                    } %}
+                    {% for u in list %}
+                    <tr>
+                      <td>
+                        {{ u.class }}
+                      </td>
+                      <td>
+                        {{ u.attr }}
+                      </td>
+                    </tr>
+                    {% endfor %}
+                  </table>
+                </div>
+              </div>
+
+              <div id="u-flex-shrink">
+                <a class="toggle block p-2 px-3 font-family-mono font-weight-semibold" href="#show-u-flex-shrink">
+                  flex-shrink
+                </a>
+                <div class="hidden" id="show-u-flex-shrink">
+                  <table class="font-family-mono">
+                    {% set list = {
+                      1: { class: ".flex-shrink", attr: "flex-shrink: 1;" },
+                      2: { class: ".flex-shrink-0", attr: "flex-shrink: 0;" },
+                    } %}
+                    {% for u in list %}
+                    <tr>
+                      <td>
+                        {{ u.class }}
+                      </td>
+                      <td>
+                        {{ u.attr }}
+                      </td>
+                    </tr>
+                    {% endfor %}
+                  </table>
+                </div>
+              </div>
+
+              <div id="u-flex-wrap">
+                <a class="toggle block p-2 px-3 font-family-mono font-weight-semibold" href="#show-u-flex-wrap">
+                  flex-wrap
+                </a>
+                <div class="hidden" id="show-u-flex-wrap">
+                  <table class="font-family-mono">
+                    {% set list = {
+                      1: { class: ".flex-no-wrap", attr: "flex-wrap: nowrap;" },
+                      2: { class: ".flex-wrap", attr: "flex-wrap: wrap;" },
+                      3: { class: ".flex-wrap-reverse", attr: "flex-wrap: wrap-reverse;" },
+                    } %}
+                    {% for u in list %}
+                    <tr>
+                      <td>
+                        {{ u.class }}
+                      </td>
+                      <td>
+                        {{ u.attr }}
+                      </td>
+                    </tr>
+                    {% endfor %}
+                  </table>
+                </div>
+              </div>
+
+              <div id="u-flex-justify-content">
+                <a class="toggle block p-2 px-3 font-family-mono font-weight-semibold" href="#show-u-flex-justify-content">
+                  flex-justify-content
+                </a>
+                <div class="hidden" id="show-u-flex-justify-content">
+                  <table class="font-family-mono">
+                    {% set list = {
+                      1: { class: ".justify-start", attr: "justify-content: flex-start;" },
+                      2: { class: ".justify-content", attr: "flex-start;" },
+                      3: { class: ".justify-center", attr: "justify-content: center;" },
+                      4: { class: ".justify-end", attr: "justify-content: flex-end;" },
+                      5: { class: ".justify-between", attr: "justify-content: space-between;" },
+                      6: { class: ".justify-around", attr: "justify-content: space-around;" },
+                    } %}
+                    {% for u in list %}
+                    <tr>
+                      <td>
+                        {{ u.class }}
+                      </td>
+                      <td>
+                        {{ u.attr }}
+                      </td>
+                    </tr>
+                    {% endfor %}
+                  </table>
+                </div>
+              </div>
+
+              <div id="u-flex-order">
+                <a class="toggle block p-2 px-3 font-family-mono font-weight-semibold" href="#show-u-flex-order">
+                  order
+                </a>
+                <div class="hidden" id="show-u-flex-order">
+                  <table class="font-family-mono">
+                    {% set list = {
+                      1: { class: ".order-first", attr: "order: -9999;" },
+                      2: { class: ".order-last", attr: "order: 9999;" },
+                      3: { class: ".order-none", attr: "order: 0;" },
+                      4: { class: ".order-1", attr: "order: 1;" },
+                      5: { class: ".order-2", attr: "order: 2;" },
+                      6: { class: ".order-3", attr: "order: 3;" },
+                      7: { class: ".order-4", attr: "order: 4;" },
+                      8: { class: ".order-5", attr: "order: 5;" },
+                    } %}
+                    {% for u in list %}
+                    <tr>
+                      <td>
+                        {{ u.class }}
+                      </td>
+                      <td>
+                        {{ u.attr }}
+                      </td>
+                    </tr>
+                    {% endfor %}
+                  </table>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="bg-white mb-4 section">
+
+              <p class="bg-dark text-white mb-0 p-2 px-3 font-size-base">
+                Spacing
+              </p>
+
+              <div id="u-spacing-overview">
+                <a class="toggle block p-2 px-3 font-family-mono font-weight-semibold" href="#show-u-spacing-overview">
+                  Overview
+                </a>
+                <div class="hidden font-size-sm" id="show-u-spacing-overview">
+                  <div class="ml-3">
+                    <p class="mb-0 py-4">
+                      Utilities for controlling an element's padding and margin.
+                    </p>
+                    <p class="mb-2">
+                      <code class="text-secondary">.{property}{side}-{size}</code>
+                    </p>
+                    <p class="mb-8">
+                      <code class="text-secondary">.{screen}:{property}{side}-{size}</code>
+                    </p>
+                    <div class="flex flex-wrap -mx-2">
+                      <div class="w-1/3 px-2">
+                        <p>
+                          <strong>Property</strong>
+                        </p>
+                        <ul class="list-none m-0 p-0 text-sm">
+                          <li>
+                            <code class="demo-square inline-block mr-1 mb-1 p-2 line-height-none">p</code> padding
+                          </li>
+                          <li>
+                            <code class="demo-square inline-block mr-1 mb-1 p-2 line-height-none">m</code> margin
+                          </li>
+                        </ul>
+                      </div>
+                      <div class="w-1/3 px-2">
+                        <p>
+                          <strong>Side</strong>
+                        </p>
+                        <ul class="list-none m-0 p-0 text-sm">
+                          <li>
+                            <code class="demo-square inline-block mr-1 mb-1 p-2 line-height-none">&nbsp;</code> all
+                          </li>
+                          <li>
+                            <code class="demo-square inline-block mr-1 mb-1 p-2 line-height-none">t</code> top
+                          </li>
+                          <li>
+                            <code class="demo-square inline-block mr-1 mb-1 p-2 line-height-none">r</code> right
+                          </li>
+                          <li>
+                            <code class="demo-square inline-block mr-1 mb-1 p-2 line-height-none">b</code> bottom
+                          </li>
+                          <li>
+                            <code class="demo-square inline-block mr-1 mb-1 p-2 line-height-none">l</code> left
+                          </li>
+                          <li>
+                            <code class="demo-square inline-block mr-1 mb-1 p-2 line-height-none">x</code> horizontal
+                          </li>
+                          <li>
+                            <code class="demo-square inline-block mr-1 mb-1 p-2 line-height-none">y</code> vertical
+                          </li>
+                        </ul>
+                      </div>
+                      <div class="w-1/3 px-2">
+                        <p>
+                          <strong>Space</strong>
+                        </p>
+                        <ul class="list-none m-0 p-0 text-sm mb-6">
+                          <li>
+                            <code class="demo-square inline-block mr-1 mb-1 p-2 line-height-none">0</code> 0
+                          </li>
+                          <li>
+                            <code class="demo-square inline-block mr-1 mb-1 p-2 line-height-none">1</code> .25rem
+                          </li>
+                          <li>
+                            <code class="demo-square inline-block mr-1 mb-1 p-2 line-height-none">2</code> .5rem
+                          </li>
+                          <li>
+                            <code class="demo-square inline-block mr-1 mb-1 p-2 line-height-none">3</code> .75rem
+                          </li>
+                          <li>
+                            <code class="demo-square inline-block mr-1 mb-1 p-2 line-height-none">4</code> 1rem
+                          </li>
+                          <li>
+                            <code class="demo-square inline-block mr-1 mb-1 p-2 line-height-none">5</code> 1.25rem
+                          </li>
+                          <li>
+                            <code class="demo-square inline-block mr-1 mb-1 p-2 line-height-none">6</code> 1.5rem
+                          </li>
+                          <li>
+                            <code class="demo-square inline-block mr-1 mb-1 p-2 line-height-none">8</code> 2rem
+                          </li>
+                          <li>
+                            <code class="demo-square inline-block mr-1 mb-1 p-2 line-height-none">12</code> 3rem
+                          </li>
+                          <li>
+                            <code class="demo-square inline-block mr-1 mb-1 p-2 line-height-none">auto</code> auto <span class="text-xs">(margins only)</span>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div id="u-spacing-margin">
+                <a class="toggle block p-2 px-3 font-family-mono font-weight-semibold" href="#show-u-spacing-margin">
+                  margin
+                </a>
+                <div class="hidden" id="show-u-spacing-margin">
+                  <p class="font-size-sm py-4 mb-0 ml-3">
+                    Negative margins start with <span class="text-secondary">-m{side?}-{size}</span><br>e.g. <span class="text-secondary">-mx-2</span> or <span class="text-secondary">-mt-8</span>
+                  </p>
+                  <table class="font-family-mono">
+                    {% set list = {
+                      1: { class: ".m-0", attr: "margin: 0;" },
+                      2: { class: ".m-1", attr: "margin: 0.25rem;" },
+                      3: { class: ".m-2", attr: "margin: 0.5rem;" },
+                      4: { class: ".m-3", attr: "margin: 0.75rem;" },
+                      5: { class: ".m-4", attr: "margin: 1rem;" },
+                      6: { class: ".m-5", attr: "margin: 1.25rem;" },
+                      7: { class: ".m-6", attr: "margin: 1.5rem;" },
+                      8: { class: ".m-8", attr: "margin: 2rem;" },
+                      9: { class: ".m-12", attr: "margin: 3rem;" },
+                      10: { class: ".my-0", attr: "margin-top: 0;<br>margin-bottom: 0;" },
+                      11: { class: "...", attr: "" },
+                      12: { class: ".my-12", attr: "margin-top: 3rem;<br>margin-bottom: 3rem;" },
+                      13: { class: ".mx-0", attr: "margin-left: 0;<br>margin-right: 0;" },
+                      14: { class: "...", attr: "" },
+                      15: { class: ".mx-12", attr: "margin-left: 3rem;<br>margin-right: 3rem;" },
+                      16: { class: ".mt-0", attr: "margin-top: 0;" },
+                      17: { class: "...", attr: "" },
+                      18: { class: ".mt-12", attr: "margin-top: 3rem;" },
+                      19: { class: ".mr-0", attr: "margin-right: 0;" },
+                      20: { class: "...", attr: "" },
+                      21: { class: ".mr-12", attr: "margin-right: 3rem;" },
+                      22: { class: ".mb-0", attr: "margin-bottom: 0;" },
+                      23: { class: "...", attr: "" },
+                      24: { class: ".mb-12", attr: "margin-bottom: 3rem;" },
+                      25: { class: ".ml-0", attr: "margin-left: 0;" },
+                      26: { class: "...", attr: "" },
+                      27: { class: ".ml-12", attr: "margin-left: 3rem;" },
+                      28: { class: ".m-auto", attr: "margin: auto;" },
+                      29: { class: ".mx-auto", attr: "margin-left: auto;<br>margin-right: auto;" },
+                      30: { class: ".my-auto", attr: "margin-top: auto;<br>margin-bottom: auto;" },
+                      31: { class: ".mt-auto", attr: "margin-top: auto;" },
+                      32: { class: ".mr-auto", attr: "margin-right: auto;" },
+                      33: { class: ".mb-auto", attr: "margin-bottom: auto;" },
+                      34: { class: ".ml-auto", attr: "margin-left: auto;" },
+                    } %}
+                    {% for u in list %}
+                    <tr>
+                      <td>
+                        {{ u.class }}
+                      </td>
+                      <td>
+                        {{ u.attr }}
+                      </td>
+                    </tr>
+                    {% endfor %}
+                  </table>
+                </div>
+              </div>
+
+              <div id="u-spacing-padding">
+                <a class="toggle block p-2 px-3 font-family-mono font-weight-semibold" href="#show-u-spacing-padding">
+                  padding
+                </a>
+                <div class="hidden" id="show-u-spacing-padding">
+                  <table class="font-family-mono">
+                    {% set list = {
+                      1: { class: ".p-0", attr: "padding: 0;" },
+                      2: { class: ".p-1", attr: "padding: 0.25rem;" },
+                      3: { class: ".p-2", attr: "padding: 0.5rem;" },
+                      4: { class: ".p-3", attr: "padding: 0.75rem;" },
+                      5: { class: ".p-4", attr: "padding: 1rem;" },
+                      6: { class: ".p-5", attr: "padding: 1.25rem;" },
+                      7: { class: ".p-6", attr: "padding: 1.5rem;" },
+                      8: { class: ".p-8", attr: "padding: 2rem;" },
+                      9: { class: ".p-12", attr: "padding: 3rem;" },
+                      10: { class: ".py-0", attr: "padding-top: 0;<br>padding-bottom: 0;" },
+                      11: { class: "...", attr: "" },
+                      12: { class: ".py-12", attr: "padding-top: 3rem;<br>padding-bottom: 3rem;" },
+                      13: { class: ".px-0", attr: "padding-left: 0;<br>padding-right: 0;" },
+                      14: { class: "...", attr: "" },
+                      15: { class: ".px-12", attr: "padding-left: 3rem;<br>padding-right: 3rem;" },
+                      16: { class: ".pt-0", attr: "padding-top: 0;" },
+                      17: { class: "...", attr: "" },
+                      18: { class: ".pt-12", attr: "padding-top: 3rem;" },
+                      19: { class: ".pr-0", attr: "padding-right: 0;" },
+                      20: { class: "...", attr: "" },
+                      21: { class: ".pr-12", attr: "padding-right: 3rem;" },
+                      22: { class: ".pb-0", attr: "padding-bottom: 0;" },
+                      23: { class: "...", attr: "" },
+                      24: { class: ".pb-12", attr: "padding-bottom: 3rem;" },
+                      25: { class: ".pl-0", attr: "padding-left: 0;" },
+                      26: { class: "...", attr: "" },
+                      27: { class: ".pl-12", attr: "padding-left: 3rem;" },
+                    } %}
+                    {% for u in list %}
+                    <tr>
+                      <td>
+                        {{ u.class }}
+                      </td>
+                      <td>
+                        {{ u.attr }}
+                      </td>
+                    </tr>
+                    {% endfor %}
+                  </table>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="bg-white mb-4 section">
+
+              <p class="bg-dark text-white mb-0 p-2 px-3 font-size-base">
+                Mixins
+              </p>
+
+              <div id="m-make-responsive">
+                <a class="toggle block p-2 px-3 font-family-mono font-weight-semibold" href="#show-make-responsive">
+                  Make Responsive
+                </a>
+                <div class="hidden" id="show-make-responsive">
+                  <div class="highlight">
+                    <pre><code class="scss">
+$body-font-size: (
+  xs: 10px,
+  sm: 14px,
+  md: 18px,
+  lg: 22px,
+  xl: 26px,
+  xxl: 30px
+);
+
+$body-padding-top: (
+  xs: 10px,
+  sm: 20px,
+  md: 30px,
+  lg: 40px,
+  xl: 50px,
+  xxl: 60px
+);
+
+body {
+  @include make-responsive(font-size, $body-font-size);
+  @include make-responsive(padding-top, $body-padding-top);
+}
+                    </code></pre>
+                  </div>
+                </div>
+              </div>
+
+              <div id="u-ratio">
+                <a class="toggle block p-2 px-3 font-family-mono font-weight-semibold" href="#show-u-ratio">
+                  Ratio
+                </a>
+                <div class="hidden" id="show-u-ratio">
+                  <table class="font-family-mono">
+                    <tr>
+                      <td>
+                        .ratio-3-4
+                      </td>
+                      <td>
+                        &lt;div class=&quot;ratio-3-4&quot; style=&quot;background-image: url(&apos;...&apos;)&quot;&gt;&lt;/div&gt;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .ratio-4-3
+                      </td>
+                      <td>
+                        &lt;div class=&quot;ratio-4-3&quot; style=&quot;background-image: url(&apos;...&apos;)&quot;&gt;&lt;/div&gt;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .ratio-16-9
+                      </td>
+                      <td>
+                        &lt;div class=&quot;ratio-16-9&quot; style=&quot;background-image: url(&apos;...&apos;)&quot;&gt;&lt;/div&gt;
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="bg-white mb-4 section">
+
+              <p class="bg-dark text-white mb-0 p-2 px-3 font-size-base">
+                Components
+              </p>
+
+              <div id="c-buttons">
+                <a class="toggle block p-2 px-3 font-family-mono font-weight-semibold" href="#show-c-buttons">
+                  Buttons
+                </a>
+                <div class="hidden" id="show-c-buttons">
+                  <div class="buttons pt-4">
+                    <p class="ml-3">
+                      <button class="btn">Button</button>
+                      <button class="btn" disabled>Button Disabled</button>
+                    </p>
+                    <div class="highlight mb-12">
+                      <pre><code class="html">
+&lt;button class=&quot;btn&quot;&gt;Button&lt;/button&gt;
+&lt;button class=&quot;btn&quot; disabled&gt;Button Disabled&lt;/button&gt;
+                      </code></pre>
+                    </div>
+
+                    <p class="ml-3">
+                      <a href="#" class="btn btn-sm">Button SM</a>
+                      <a href="#" class="btn">Button</a>
+                      <a href="#" class="btn btn-lg">Button LG</a>
+                    </p>
+                    <div class="highlight mb-12">
+                      <pre><code class="html">
+&lt;a href=&quot;#&quot; class=&quot;btn btn-sm&quot;&gt;Button SM&lt;/a&gt;
+&lt;a href=&quot;#&quot; class=&quot;btn&quot;&gt;Button&lt;/a&gt;
+&lt;a href=&quot;#&quot; class=&quot;btn btn-lg&quot;&gt;Button LG&lt;/a&gt;
+                      </code></pre>
+                    </div>
+
+                    <p class="ml-3">
+                      <a href="#" class="btn btn-outline">Button Outline</a>
+                    </p>
+                    <p class="ml-3">
+                      <a href="#" class="btn btn-link">Button Link</a>
+                    </p>
+                    <p class="ml-3">
+                      <a href="#" class="btn btn-block">Button Block</a>
+                    </p>
+
+                    <div class="highlight mb-12">
+                      <pre><code class="html">
+&lt;a href=&quot;#&quot; class=&quot;btn btn-outline&quot;&gt;Button Outline&lt;/a&gt;
+&lt;a href=&quot;#&quot; class=&quot;btn btn-link&quot;&gt;Button Link&lt;/a&gt;
+&lt;a href=&quot;#&quot; class=&quot;btn btn-block&quot;&gt;Button Block&lt;/a&gt;
+                      </code></pre>
+                    </div>
+
+                    <p class="ml-3">
+                      <a href="#" class="btn btn-primary">Primary</a>
+                      <a href="#" class="btn btn-secondary">Secondary</a>
+                      <a href="#" class="btn btn-success">Success</a>
+                      <a href="#" class="btn btn-error">Error</a>
+                      <a href="#" class="btn btn-white">White</a>
+                      <a href="#" class="btn btn-black">Black</a>
+                    </p>
+                    <p class="ml-3">
+                      <a href="#" class="btn btn-outline btn-primary">Primary</a>
+                      <a href="#" class="btn btn-outline btn-secondary">Secondary</a>
+                      <a href="#" class="btn btn-outline btn-success">Success</a>
+                      <a href="#" class="btn btn-outline btn-error">Error</a>
+                      <a href="#" class="btn btn-outline btn-white">White</a>
+                      <a href="#" class="btn btn-outline btn-black">Black</a>
+                    </p>
+                    <p class="ml-3">
+                      <a href="#" class="btn btn-link btn-primary">Primary</a>
+                      <a href="#" class="btn btn-link btn-secondary">Secondary</a>
+                      <a href="#" class="btn btn-link btn-success">Success</a>
+                      <a href="#" class="btn btn-link btn-error">Error</a>
+                      <a href="#" class="btn btn-link btn-white">White</a>
+                      <a href="#" class="btn btn-link btn-black">Black</a>
+                    </p>
+
+                    <div class="highlight">
+                      <pre><code class="html">
+&lt;a href=&quot;#&quot; class=&quot;btn btn-primary&quot;&gt;Primary&lt;/a&gt;
+&lt;a href=&quot;#&quot; class=&quot;btn btn-secondary&quot;&gt;Secondary&lt;/a&gt;
+&lt;a href=&quot;#&quot; class=&quot;btn btn-success&quot;&gt;Success&lt;/a&gt;
+&lt;a href=&quot;#&quot; class=&quot;btn btn-error&quot;&gt;Error&lt;/a&gt;
+&lt;a href=&quot;#&quot; class=&quot;btn btn-white&quot;&gt;White&lt;/a&gt;
+&lt;a href=&quot;#&quot; class=&quot;btn btn-black&quot;&gt;Black&lt;/a&gt;
+
+&lt;a href=&quot;#&quot; class=&quot;btn btn-outline btn-primary&quot;&gt;Primary&lt;/a&gt;
+&lt;a href=&quot;#&quot; class=&quot;btn btn-outline btn-secondary&quot;&gt;Secondary&lt;/a&gt;
+&lt;a href=&quot;#&quot; class=&quot;btn btn-outline btn-success&quot;&gt;Success&lt;/a&gt;
+&lt;a href=&quot;#&quot; class=&quot;btn btn-outline btn-error&quot;&gt;Error&lt;/a&gt;
+&lt;a href=&quot;#&quot; class=&quot;btn btn-outline btn-white&quot;&gt;White&lt;/a&gt;
+&lt;a href=&quot;#&quot; class=&quot;btn btn-outline btn-black&quot;&gt;Black&lt;/a&gt;
+
+&lt;a href=&quot;#&quot; class=&quot;btn btn-link btn-primary&quot;&gt;Primary&lt;/a&gt;
+&lt;a href=&quot;#&quot; class=&quot;btn btn-link btn-secondary&quot;&gt;Secondary&lt;/a&gt;
+&lt;a href=&quot;#&quot; class=&quot;btn btn-link btn-success&quot;&gt;Success&lt;/a&gt;
+&lt;a href=&quot;#&quot; class=&quot;btn btn-link btn-error&quot;&gt;Error&lt;/a&gt;
+&lt;a href=&quot;#&quot; class=&quot;btn btn-link btn-white&quot;&gt;White&lt;/a&gt;
+&lt;a href=&quot;#&quot; class=&quot;btn btn-link btn-black&quot;&gt;Black&lt;/a&gt;
+                      </code></pre>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div id="c-grids">
+                <a class="toggle block p-2 px-3 font-family-mono font-weight-semibold" href="#show-c-grids">
+                  Grids
+                </a>
+                <div class="hidden" id="show-c-grids">
+                  <div class="py-4">
+                    <div class="flex flex-wrap -mx-2">
+                      <div class="w-full md:w-1/3 px-2">
+                        <div class="bg-light p-2">1</div>
+                      </div>
+                      <div class="w-full md:w-1/3 px-2">
+                        <div class="bg-light p-2">2</div>
+                      </div>
+                      <div class="w-full md:w-1/3 px-2">
+                        <div class="bg-light p-2">3</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="highlight">
+                    <pre><code class="html">
+&lt;div class=&quot;flex flex-wrap -mx-2&quot;&gt;
+  &lt;div class=&quot;w-full md:w-1/3 px-2&quot;&gt;
+    &lt;div class=&quot;bg-light p-2&quot;&gt;1&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;w-full md:w-1/3 px-2&quot;&gt;
+    &lt;div class=&quot;bg-light p-2&quot;&gt;2&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;w-full md:w-1/3 px-2&quot;&gt;
+    &lt;div class=&quot;bg-light p-2&quot;&gt;3&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+                    </code></pre>
+                  </div>
+                </div>
+              </div>
+
+              <div id="c-list-reset">
+                <a class="toggle block p-2 px-3 font-family-mono font-weight-semibold" href="#show-c-list-reset">
+                  List Reset
+                </a>
+                <div class="hidden" id="show-c-list-reset">
+                  <div class="highlight">
+                    <pre><code class="html">
+&lt;ul class=&quot;list-none m-0 p-0&quot;&gt;
+  &lt;li&gt;Item 1&lt;/li&gt;
+  &lt;li&gt;Item 2&lt;/li&gt;
+&lt;/ul&gt;
+                    </code></pre>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="bg-white mb-4 section">
+
+              <p class="bg-dark text-white mb-0 p-2 px-3 font-size-base">
+                Templates
+              </p>
+
+              <a class="block p-2 px-3 font-family-mono font-weight-semibold" href="preview.html">
+                Index Preview
+              </a>
+              <a class="block p-2 px-3 font-family-mono font-weight-semibold" href="starter.html">
+                Starter
+              </a>
+            </div>
+
+            <p class="font-size-base text-right">
+              <a href="https://github.com/tomaszbujnowicz/hybrid-utility-itcss">
+                Github
+              </a>
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- https://highlightjs.org/ -->
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.9/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.9/languages/scss.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+
+  <!--
+    How to show and hide elements with vanilla JavaScript
+    https://gomakethings.com/how-to-show-and-hide-elements-with-vanilla-javascript/
+  -->
+  <script>
+    // Show an element
+    var show = function (elem) {
+    	elem.style.display = 'block';
+    };
+
+    // Hide an element
+    var hide = function (elem) {
+    	elem.style.display = 'none';
+    };
+
+    // Toggle element visibility
+    var toggle = function (elem) {
+
+    	// If the element is visible, hide it
+    	if (window.getComputedStyle(elem).display === 'block') {
+    		hide(elem);
+    		return;
+    	}
+
+    	// Otherwise, show it
+    	show(elem);
+
+    };
+
+    // Listen for click events
+    document.addEventListener('click', function (event) {
+
+    	// Make sure clicked element is our toggle
+    	if (!event.target.classList.contains('toggle')) return;
+
+    	// Prevent default link behavior
+    	event.preventDefault();
+
+    	// Get the content
+    	var content = document.querySelector(event.target.hash);
+    	if (!content) return;
+
+    	// Toggle the content
+    	toggle(content);
+      event.target.classList.toggle('toggled');
+
+    }, false);
+  </script>
+
+{% endblock %}

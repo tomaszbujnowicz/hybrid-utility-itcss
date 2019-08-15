@@ -1,0 +1,16 @@
+{% extends '../layouts/default.twig' %}
+{% set head_title = 'Starter Page' %}
+{% set body_class = '' %}
+{% set menu_active = 'blank-page' %}
+
+{% block page %}
+
+  {% include '../components/navbar.twig' %}
+
+  <div class="container">
+    Here goes content.
+  </div>
+
+  {% include '../components/footer.twig' %}
+
+{% endblock %}

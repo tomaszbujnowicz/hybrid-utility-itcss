@@ -1,0 +1,83 @@
+{
+  "name": "hybrid-utility-itcss",
+  "version": "1.0.0",
+  "description": "Hybrid Utility ITCSS - Front-end boilerplate | ITCSS Architecture + CSS Utilities + Gulp 4 + Webpack 4 + Babel + BrowserSync + Twig.js",
+  "main": "index.js",
+  "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "@babel/register": "^7.5.5",
+    "autoprefixer": "^9.6.1",
+    "babel-loader": "^8.0.6",
+    "browser-sync": "^2.26.7",
+    "cross-env": "^5.2.0",
+    "css-loader": "^3.2.0",
+    "del": "^5.0.0",
+    "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
+    "gulp-changed": "^4.0.0",
+    "gulp-eslint": "^6.0.0",
+    "gulp-gh-pages": "^0.5.4",
+    "gulp-if": "^3.0.0",
+    "gulp-jsbeautifier": "^3.0.1",
+    "gulp-plumber": "^1.2.1",
+    "gulp-postcss": "^8.0.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-sass-glob": "^1.1.0",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-stylelint": "^9.0.0",
+    "gulp-twig": "^1.2.0",
+    "lodash.debounce": "^4.0.8",
+    "lodash.throttle": "^4.1.1",
+    "node-notifier": "^5.4.1",
+    "sass-loader": "^7.2.0",
+    "style-loader": "^1.0.0",
+    "stylelint": "^10.1.0",
+    "stylelint-config-recommended-scss": "^3.3.0",
+    "stylelint-config-standard": "^18.3.0",
+    "stylelint-order": "^3.0.1",
+    "stylelint-scss": "^3.9.3",
+    "webpack": "^4.39.2",
+    "webpack-notifier": "^1.8.0",
+    "webpack-stream": "^5.2.1"
+  },
+  "engines": {
+    "node": ">=8.16.0"
+  },
+  "scripts": {
+    "start": "cross-env NODE_ENV=development gulp",
+    "watch": "cross-env NODE_ENV=development gulp watch",
+    "build": "cross-env NODE_ENV=production gulp build",
+    "deploy": "cross-env NODE_ENV=production gulp deploy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tomaszbujnowicz/hybrid-utility-itcss.git"
+  },
+  "keywords": [
+    "utility css",
+    "itcss",
+    "gulp",
+    "gulp 4",
+    "webpack",
+    "webpack 4",
+    "babel",
+    "browsersync",
+    "twig",
+    "css architecture",
+    "sass",
+    "frontend",
+    "frontend boilerplate",
+    "frontend starter"
+  ],
+  "author": {
+    "name": "Tomasz Bujnowicz",
+    "email": "hi@tomaszbujnowicz.com",
+    "url": "https://www.tomaszbujnowicz.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tomaszbujnowicz/hybrid-utility-itcss/issues"
+  },
+  "homepage": "https://github.com/tomaszbujnowicz/hybrid-utility-itcss#readme"
+}

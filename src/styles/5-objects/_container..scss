@@ -1,0 +1,14 @@
+/**
+ * Container
+ */
+
+.container,
+.container-fluid {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.container {
+  @include make-responsive(max-width, $container-max-widths);
+}

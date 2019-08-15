@@ -1,0 +1,30 @@
+/**
+ * Spacing
+ * Used for generating margin/padding CSS utility classes
+ */
+
+$spacer: 1rem !default;
+$spacers: (
+  0: 0,
+  1: $spacer * .25,
+  2: $spacer * .5,
+  3: $spacer * .75,
+  4: $spacer * 1,
+  5: $spacer * 1.25,
+  6: $spacer * 1.5,
+  8: $spacer * 2,
+  12: $spacer * 3,
+  auto: auto,
+) !default;
+
+@function negativify-map($map) {
+  $result: ();
+  @each $key, $value in $map {
+    @if $key != 0 {
+      $result: map-merge($result, ($key: (-$value)));
+    }
+  }
+  @return $result;
+}
+
+$negative-spacers: negativify-map($spacers) !default;
