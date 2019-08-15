@@ -1,0 +1,2953 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+  <title>Welcome &middot; Hybrid Utility ITCSS</title>
+
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body class="bg-light">
+
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.9/styles/dracula.min.css">
+
+  <style>
+    /* Inline styling for the demo purpose */
+    pre {
+      font-size: .875rem;
+      margin: 0;
+    }
+
+    .hljs {
+      padding-left: 1rem;
+    }
+
+    .demo-square,
+    .section {
+      border: 1px solid #ddd;
+    }
+
+    .demo-square {
+      vertical-align: middle;
+    }
+
+    .buttons .btn {
+      margin-bottom: .25rem;
+    }
+
+    table td,
+    .toggle {
+      border-bottom: 1px solid #ddd;
+    }
+
+    table td {
+      padding: .5rem .75rem;
+      font-size: .75rem;
+      cursor: text;
+      width: 50%;
+    }
+
+    .toggle {
+      transition: all .2s ease-in-out;
+    }
+
+    .toggle:hover {
+      text-decoration: none;
+      background-color: #f5f5f5;
+    }
+
+    .toggled {
+      background-color: #f2f2f2;
+    }
+  </style>
+
+  <div class="container px-4">
+
+    <div class="demo">
+
+      <div class="demo-content py-4">
+
+
+        <div class="flex flex-wrap -mx-2 mb-4">
+
+          <div class="w-full px-2">
+
+            <div class="bg-white p-4 section">
+
+              <h2 class="h4 mb-4 text-black">
+                Hybrid Utility ITCSS
+              </h2>
+              <p class="font-size-base mb-0">
+                Front-end boilerplate / ITCSS Architecture / CSS Utilities
+              </p>
+              <p class="font-size-base mb-2">
+                Gulp / Webpack / Babel / Live Reload / Twig.js
+              </p>
+              <p class="font-size-sm mb-0">
+                Based on best pieces from Bootstrap, Tailwind CSS and years of experience.
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div class="flex flex-wrap -mx-2 mb-8 font-size-xs">
+
+          <div class="w-full md:w-1/2 px-2">
+
+            <div class="bg-white p-4 mb-4 section hidden">
+
+              <h2 class="h3 mb-4 text-black">
+                Hybrid Utility ITCSS
+              </h2>
+              <p class="font-size-lg mb-0">
+                Front-end boilerplate / ITCSS Architecture / CSS Utilities
+              </p>
+              <p class="font-size-lg">
+                Gulp / Webpack / Babel / Live Reload / Twig.js
+              </p>
+              <p class="font-size-sm">
+                Based on best parts from Bootstrap, Tailwind CSS and years of experience.
+              </p>
+
+              <p class="font-size-sm">
+                Why not use Bootstrap or Tailwind?<br>
+                When you craft highly customized site then Bootstrap might be a bit overkill. Tailwind on other hand misses CSS architecture that ITCSS provides + we need to use Purgecss to limit the file size. It's tricky to add that in the setup in some cases when you work with many platforms/setups.
+              </p>
+            </div>
+
+            <div class="bg-white mb-4 section">
+
+              <p class="bg-dark text-white mb-0 p-2 px-3 font-size-base">
+                Settings
+              </p>
+
+              <div id="itcss-overview">
+                <a class="toggle block p-2 px-3 font-family-mono font-weight-semibold" href="#show-itcss-overview">
+                  ITCSS Overview
+                </a>
+                <div class="hidden" id="show-itcss-overview">
+                  <div class="highlight">
+                    <pre><code class="scss">
+ITCSS: Inverted Triangle CSS
+
+****************   1. Settings <span class="font-weight-bold text-success">(start your work here)</span>
+ **************    2. Tools
+  ************     3. Generic
+   **********      4. Elements
+    ********       5. Objects
+     ******        6. Components
+      ****         7. Modules <span class="font-weight-bold text-success">(most work will be done here)</span>
+       **          8. Utilities
+
+1. Settings
+   Global configuration and variables.
+   Breakpoints, colors, spacing, utilities etc.
+
+2. Tools
+   Functions and mixins.
+
+3. Generic
+   Ground zero styles. No classes.
+
+4. Elements
+   Unclassed (bare) HTML element.
+   H1, Ul, A etc.
+
+5. Objects
+   Common non-cosmetic structural design patterns.
+   Containers, rows, grids, colums etc.
+
+6. Components
+   Specific cosmetic elements of UI.
+   Buttons, forms etc.
+
+7. Modules
+   Multi-part components.
+   Navbar, footer etc.
+
+8. Utilities
+   Helpers and overrides.
+
+Shame
+All the CSS, hacks and things we are not proud of.
+                    </code></pre>
+                  </div>
+                </div>
+              </div>
+
+              <div id="s-breakpoints">
+                <a class="toggle block p-2 px-3 font-family-mono font-weight-semibold" href="#show-s-breakpoints">
+                  Breakpoints
+                </a>
+                <div class="hidden" id="show-s-breakpoints">
+                  <p class="font-size-sm my-4 ml-3">
+                    Define media query breakpoints.
+                  </p>
+                  <div class="highlight mb-8">
+                    <pre><code class="scss">
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1680px
+) !default;
+                    </code></pre>
+                  </div>
+
+                  <p class="font-size-sm my-4 ml-3">
+                    Define the maximum width of .container for different breakpoints.
+                  </p>
+                  <div class="highlight mb-8">
+                    <pre><code class="scss">
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px,
+  xxl: 1440px
+) !default;
+                    </code></pre>
+                  </div>
+
+                  <p class="font-size-sm my-4 ml-3">
+                    Responsive breakpoints. <span class="text-secondary">{screen}: utility name</span>
+                  </p>
+                  <div class="highlight mb-8">
+                    <pre><code class="html">
+&lt;div class=&quot;w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 xxl:w-1/6&quot;&gt;&lt;/div&gt;
+                    </code></pre>
+                  </div>
+
+                  <p class="font-size-sm my-4 ml-3">
+                    CSS media queries mixins
+                  </p>
+                  <div class="highlight">
+                    <pre><code class="scss">
+@include media-breakpoint-up(sm) {}
+@include media-breakpoint-up(md) {}
+@include media-breakpoint-up(lg) {}
+@include media-breakpoint-up(xl) {}
+@include media-breakpoint-up(xxl) {}
+
+@include media-breakpoint-down(xs) {}
+@include media-breakpoint-down(sm) {}
+@include media-breakpoint-down(md) {}
+@include media-breakpoint-down(lg) {}
+@include media-breakpoint-down(xxl) {}
+
+@include media-breakpoint-only(xs) {}
+@include media-breakpoint-only(sm) {}
+@include media-breakpoint-only(md) {}
+@include media-breakpoint-only(lg) {}
+@include media-breakpoint-only(xl) {}
+@include media-breakpoint-only(xxl) {}
+
+@include media-breakpoint-between(md, xl) {}
+                    </code></pre>
+                  </div>
+
+                </div>
+              </div>
+
+              <div id="s-colors">
+                <a class="toggle block p-2 px-3 font-family-mono font-weight-semibold" href="#show-s-colors">
+                  Colors
+                </a>
+                <div class="hidden" id="show-s-colors">
+                  <div class="highlight">
+                    <pre><code class="scss">
+// Colors
+$color-base: #4a5568 !default;
+$color-primary: #007bff !default;
+$text-secondary: #7f19e6 !default;
+$color-white: #fff !default;
+$color-light: #f2f2f2 !default;
+$color-dark: #343a40 !default;
+$color-black: #000 !default;
+$color-success: #00b300 !default;
+$color-error: #c00 !default;
+
+// Map used for generating CSS utility classes
+$colors: (
+  'base': $color-base,
+  'primary': $color-primary,
+  'secondary': $text-secondary,
+  'white': $color-white,
+  "light": $color-light,
+  "dark": $color-dark,
+  'black': $color-black,
+  'success': $color-success,
+  'error': $color-error
+) !default;
+
+// Links
+$color-link-color: #007bff !default;
+$color-link-color-hover: darken($color-link-color, 20%) !default;
+                    </code></pre>
+                  </div>
+                </div>
+              </div>
+
+              <div id="s-spacing">
+                <a class="toggle block p-2 px-3 font-family-mono font-weight-semibold" href="#show-s-spacing">
+                  Spacing
+                </a>
+                <div class="hidden" id="show-s-spacing">
+                  <div class="highlight">
+                    <pre><code class="scss">
+// Used for generating margin/padding CSS utility classes
+$spacer: 1rem !default;
+$spacers: (
+  0: 0,
+  1: $spacer * .25,
+  2: $spacer * .5,
+  3: $spacer * .75,
+  4: $spacer * 1,
+  5: $spacer * 1.25,
+  6: $spacer * 1.5,
+  8: $spacer * 2,
+  12: $spacer * 3
+  auto: auto,
+) !default;
+                    </code></pre>
+                  </div>
+                </div>
+              </div>
+
+              <div id="s-typo">
+                <a class="toggle block p-2 px-3 font-family-mono font-weight-semibold" href="#show-s-typo">
+                  Typography
+                </a>
+                <div class="hidden" id="show-s-typo">
+                  <div class="highlight">
+                    <pre><code class="scss">
+// Font Family
+$font-family-base: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
+$font-family-serif: Georgia, Cambria, "Times New Roman", Times, serif !default;
+$font-family-mono: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
+$font-family-headings: $font-family-base;
+
+// Font Size
+$font-size-xs: .75rem !default;
+$font-size-sm: .875rem !default;
+$font-size-base: .875rem !default;
+$font-size-lg: 1.125rem !default;
+$font-size-xl: 1.25rem !default;
+
+// Font Weight
+$font-weight-hairline: 100 !default;
+$font-weight-thin: 200 !default;
+$font-weight-light: 300 !default;
+$font-weight-normal: 400 !default;
+$font-weight-medium: 500 !default;
+$font-weight-semibold: 600 !default;
+$font-weight-bold: 700 !default;
+$font-weight-extrabold: 800 !default;
+$font-weight-black: 900 !default;
+
+// Line Height
+$line-height-none: 1 !default;
+$line-height-xs: 1.25 !default;
+$line-height-sm: 1.375 !default;
+$line-height-base: 1.5 !default;
+$line-height-lg: 1.625 !default;
+$line-height-xl: 2 !default;
+
+// Headings
+$headings-margin-bottom: 1rem !default;
+$headings-font-family: $font-family-headings !default;
+$headings-font-weight: $font-weight-medium !default;
+$headings-line-height: 1.2 !default;
+$headings-color: inherit !default;
+$headings-text-transform: inherit !default;
+
+// Headings Responsive Size
+$h1-font-size: ( xs: 20px, sm: 24px, md: 28px, lg: 32px, xl: 36px, xxl: 40px );
+$h2-font-size: ( xs: 18px, sm: 20px, md: 24px, lg: 28px, xl: 32px, xxl: 36px );
+$h3-font-size: ( xs: 16px, sm: 18px, md: 20px, lg: 24px, xl: 28px, xxl: 32px );
+$h4-font-size: ( xs: 16px, sm: 16px, md: 18px, lg: 22px, xl: 26px, xxl: 30px );
+$h5-font-size: ( xs: 16px, sm: 16px, md: 18px, lg: 20px, xl: 22px, xxl: 24px );
+$h6-font-size: ( xs: 16px, sm: 16px, md: 16px, lg: 18px, xl: 20px, xxl: 20px );
+
+// List
+$list-margin-bottom: 1rem !default;
+
+// Paragraph
+$paragraph-margin-bottom: 1rem !default;
+                    </code></pre>
+                  </div>
+                </div>
+              </div>
+
+              <div id="s-utilities">
+                <a class="toggle block p-2 px-3 font-family-mono font-weight-semibold" href="#show-s-utilities">
+                  Utilities
+                </a>
+                <div class="hidden" id="show-s-utilities">
+                  <div class="font-size-sm ml-3">
+                    <p class="pt-4">
+                      Customize responsiveness (true by default), attributes, classes etc.
+                    </p>
+                    <p>
+                      You can reduce file size by removing unused breakpoints
+                      or disabling unused utilities. Controlling file size:
+                    </p>
+                    <ul>
+                      <li>
+                        enable/disable generating utility classes <span class="text-secondary">$use-utilities: true/false;</span>
+                      </li>
+                      <li>
+                        enable/disable specific utility classes <span class="text-secondary">$utilities: map-remove(..)</span>
+                      </li>
+                      <li>
+                        enable/disable responsiveness for a specific utility class <span class="text-secondary">responsive: true/false</span>
+                      </li>
+                      <li>
+                        remove unused CSS using Purgecss
+                      </li>
+                    </ul>
+                    <p>
+                      File size:
+                    </p>
+                    <ul>
+                      <li>
+                        Including utilities with responsiveness: 85kb
+                      </li>
+                      <li>
+                        Including utilities without responsiveness: 23kb
+                      </li>
+                      <li>
+                        No utilities (raw ITCSS): 12kb
+                      </li>
+                      <li>
+                        Including utilties with responsiveness (layout only): 28kb
+                      </li>
+                      <li>
+                        Including utilities with responsiveness (layout + flexbox): 36kb
+                      </li>
+                    </ul>
+                    <p>
+                      Note: Spacing utilities (margin/padding) with responsiveness enabled add a lot to file size so consider whether you need them all.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="bg-white mb-4 section">
+
+              <p class="bg-dark text-white mb-0 p-2 px-3 font-size-base">
+                Backgrounds
+              </p>
+
+              <div id="u-bg-color">
+                <a class="toggle block p-2 px-3 font-family-mono font-weight-semibold" href="#show-u-bg-color">
+                  background-color
+                </a>
+                <div class="hidden" id="show-u-bg-color">
+                  <table class="font-family-mono">
+                    <tr>
+                      <td>
+                        .bg-base
+                      </td>
+                      <td>
+                        #4a5568
+                      </td>
+                      <td>
+                        <div class="p-3" style="background-color: #4a5568;"></div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .bg-primary
+                      </td>
+                      <td>
+                        #007bff
+                      </td>
+                      <td>
+                        <div class="p-3" style="background-color: #007bff;"></div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .bg-secondary
+                      </td>
+                      <td>
+                        #7f19e6
+                      </td>
+                      <td>
+                        <div class="p-3" style="background-color: #7f19e6;"></div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .bg-white
+                      </td>
+                      <td>
+                        #fff
+                      </td>
+                      <td>
+                        <div class="p-3" style="background-color: #fff;"></div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .bg-light
+                      </td>
+                      <td>
+                        #f8f9fa
+                      </td>
+                      <td>
+                        <div class="p-3" style="background-color: #f8f9fa;"></div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .bg-dark
+                      </td>
+                      <td>
+                        #343a40
+                      </td>
+                      <td>
+                        <div class="p-3" style="background-color: #343a40;"></div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .bg-black
+                      </td>
+                      <td>
+                        #000
+                      </td>
+                      <td>
+                        <div class="p-3" style="background-color: #000;"></div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .bg-success
+                      </td>
+                      <td>
+                        #00b300
+                      </td>
+                      <td>
+                        <div class="p-3" style="background-color: #00b300;"></div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .bg-error
+                      </td>
+                      <td>
+                        #c00
+                      </td>
+                      <td>
+                        <div class="p-3" style="background-color: #c00;"></div>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+
+              <div id="u-bg-size">
+                <a class="toggle block p-2 px-3 font-family-mono font-weight-semibold" href="#show-u-bg-size">
+                  background-size
+                </a>
+                <div class="hidden" id="show-u-bg-size">
+                  <table class="font-family-mono">
+                    <tr>
+                      <td>.bg-auto</td>
+                      <td>background-size: auto;</td>
+                    </tr>
+                    <tr>
+                      <td>.bg-cover</td>
+                      <td>background-size: cover;</td>
+                    </tr>
+                    <tr>
+                      <td>.bg-contain</td>
+                      <td>background-size: contain;</td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="bg-white mb-4 section">
+
+              <p class="bg-dark text-white mb-0 p-2 px-3 font-size-base">
+                Layout
+              </p>
+
+              <div id="u-container">
+                <a class="toggle block p-2 px-3 font-family-mono font-weight-semibold" href="#show-u-container">
+                  container
+                </a>
+                <div class="hidden" id="show-u-container">
+                  <table class="font-family-mono">
+                    <tr>
+                      <td>
+                        .container<br>
+                        .container-fluid
+                      </td>
+                      <td>
+                        width: 100%;
+                        <br>
+                        margin-left: auto;
+                        <br>
+                        margin-right: auto;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .container
+                      </td>
+                      <td>
+                        sm: max-width: 540px;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td>
+                        md: max-width: 720px;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td>
+                        lg: max-width: 960px;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td>
+                        xl: max-width: 1140px;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td>
+                        xxl: max-width: 1440px;
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+
+              <div id="u-display">
+                <a class="toggle block p-2 px-3 font-family-mono font-weight-semibold" href="#show-u-display">
+                  display
+                </a>
+                <div class="hidden" id="show-u-display">
+                  <table class="font-family-mono">
+                    <tr>
+                      <td>
+                        .block
+                      </td>
+                      <td>
+                        display: block;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .inline-block
+                      </td>
+                      <td>
+                        display: inline-block;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .inline
+                      </td>
+                      <td>
+                        display: inline;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .flex
+                      </td>
+                      <td>
+                        display: flex;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .inline-flex
+                      </td>
+                      <td>
+                        display: inline-flex;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .table
+                      </td>
+                      <td>
+                        display: table;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .table-row
+                      </td>
+                      <td>
+                        display: table-row;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .table-cell
+                      </td>
+                      <td>
+                        display: table-cell;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .table-cell
+                      </td>
+                      <td>
+                        display: table-cell;
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+
+              <div id="u-position">
+                <a class="toggle block p-2 px-3 font-family-mono font-weight-semibold" href="#show-u-position">
+                  position
+                </a>
+                <div class="hidden" id="show-u-position">
+                  <table class="font-family-mono">
+                    <tr>
+                      <td>
+                        .static
+                      </td>
+                      <td>
+                        position: static;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .fixed
+                      </td>
+                      <td>
+                        position: fixed;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .absolute
+                      </td>
+                      <td>
+                        position: absolute;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .relative
+                      </td>
+                      <td>
+                        position: relative;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .sticky
+                      </td>
+                      <td>
+                        position: sticky;
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+
+              <div id="u-top-right-bottom-left">
+                <a class="toggle block p-2 px-3 font-family-mono font-weight-semibold" href="#show-u-top-right-bottom-left">
+                  top-right-bottom-left
+                </a>
+                <div class="hidden" id="show-u-top-right-bottom-left">
+                  <table class="font-family-mono">
+                    <tr>
+                      <td>
+                        .top-0
+                      </td>
+                      <td>
+                        top: auto;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .right-0
+                      </td>
+                      <td>
+                        right: 0;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .bottom-0
+                      </td>
+                      <td>
+                        bottom: 0;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .left-0
+                      </td>
+                      <td>
+                        left: 0;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .top-auto
+                      </td>
+                      <td>
+                        top: auto;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .right-auto
+                      </td>
+                      <td>
+                        right: auto;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .bottom-auto
+                      </td>
+                      <td>
+                        bottom: auto;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .left-auto
+                      </td>
+                      <td>
+                        left: auto;
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+
+              <div id="u-width">
+                <a class="toggle block p-2 px-3 font-family-mono font-weight-semibold" href="#show-u-width">
+                  width
+                </a>
+                <div class="hidden" id="show-u-width">
+                  <table class="font-family-mono">
+                    <tr>
+                      <td>
+                        .w-1/2
+                      </td>
+                      <td>
+                        width: 50%;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .w-1/3
+                      </td>
+                      <td>
+                        width: 33.333333%;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .w-2/3
+                      </td>
+                      <td>
+                        width: 66.666667%;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .w-1/4
+                      </td>
+                      <td>
+                        width: 25%;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .w-2/4
+                      </td>
+                      <td>
+                        width: 50%;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .w-3/4
+                      </td>
+                      <td>
+                        width: 75%;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .w-1/5
+                      </td>
+                      <td>
+                        width: 20%;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .w-2/5
+                      </td>
+                      <td>
+                        width: 40%;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .w-3/5
+                      </td>
+                      <td>
+                        width: 60%;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .w-4/5
+                      </td>
+                      <td>
+                        width: 80%;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .w-1/6
+                      </td>
+                      <td>
+                        width: 16.666667%;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .w-2/6
+                      </td>
+                      <td>
+                        width: 33.333333%;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .w-3/6
+                      </td>
+                      <td>
+                        width: 50%;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .w-4/6
+                      </td>
+                      <td>
+                        width: 66.666667%;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .w-5/6
+                      </td>
+                      <td>
+                        width: 83.333333%;
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="bg-white mb-4 section">
+
+              <p class="bg-dark text-white mb-0 p-2 px-3 font-size-base">
+                Typography
+              </p>
+
+              <div id="u-text-color">
+                <a class="toggle block p-2 px-3 font-family-mono font-weight-semibold" href="#show-u-color">
+                  color
+                </a>
+                <div class="hidden" id="show-u-color">
+                  <table class="font-family-mono">
+                    <tr>
+                      <td>
+                        .text-base
+                      </td>
+                      <td>
+                        #4a5568
+                      </td>
+                      <td>
+                        <div class="p-3" style="background-color: #4a5568;"></div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .text-primary
+                      </td>
+                      <td>
+                        #007bff
+                      </td>
+                      <td>
+                        <div class="p-3" style="background-color: #007bff;"></div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .text-secondary
+                      </td>
+                      <td>
+                        #7f19e6
+                      </td>
+                      <td>
+                        <div class="p-3" style="background-color: #7f19e6;"></div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .text-white
+                      </td>
+                      <td>
+                        #fff
+                      </td>
+                      <td>
+                        <div class="p-3" style="background-color: #fff;"></div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .text-light
+                      </td>
+                      <td>
+                        #f8f9fa
+                      </td>
+                      <td>
+                        <div class="p-3" style="background-color: #f8f9fa;"></div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .text-dark
+                      </td>
+                      <td>
+                        #343a40
+                      </td>
+                      <td>
+                        <div class="p-3" style="background-color: #343a40;"></div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .text-black
+                      </td>
+                      <td>
+                        #000
+                      </td>
+                      <td>
+                        <div class="p-3" style="background-color: #000;"></div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .text-success
+                      </td>
+                      <td>
+                        #00b300
+                      </td>
+                      <td>
+                        <div class="p-3" style="background-color: #00b300;"></div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .text-error
+                      </td>
+                      <td>
+                        #c00
+                      </td>
+                      <td>
+                        <div class="p-3" style="background-color: #c00;"></div>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+
+              <div id="u-font-family">
+                <a class="toggle block p-2 px-3 font-family-mono font-weight-semibold" href="#show-u-family">
+                  font-family
+                </a>
+                <div class="hidden" id="show-u-family">
+                  <table class="font-family-mono">
+                    <tr>
+                      <td>
+                        .font-family-base
+                      </td>
+                      <td>
+                        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .font-family-serif
+                      </td>
+                      <td>
+                        font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .font-family-mono
+                      </td>
+                      <td>
+                        font-family: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .font-family-headings
+                      </td>
+                      <td>
+                        = .font-family-base
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+
+              <div id="u-font-size">
+                <a class="toggle block p-2 px-3 font-family-mono font-weight-semibold" href="#show-u-font-size">
+                  font-size
+                </a>
+                <div class="hidden" id="show-u-font-size">
+                  <table class="font-family-mono">
+                    <tr>
+                      <td>
+                        .font-size-xs
+                      </td>
+                      <td>
+                        font-size: .75rem;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .font-size-sm
+                      </td>
+                      <td>
+                        font-size: .875rem;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .font-size-base
+                      </td>
+                      <td>
+                        font-size: 1rem;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .font-size-lg
+                      </td>
+                      <td>
+                        font-size: 1.125rem;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .font-size-xl
+                      </td>
+                      <td>
+                        font-size: 1.25rem;
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+
+              <div id="u-font-style">
+                <a class="toggle block p-2 px-3 font-family-mono font-weight-semibold" href="#show-u-font-style">
+                  font-style
+                </a>
+                <div class="hidden" id="show-u-font-style">
+                  <table class="font-family-mono">
+                    <tr>
+                      <td>
+                        .italic
+                      </td>
+                      <td>
+                        font-style: italic;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .non-italic
+                      </td>
+                      <td>
+                        font-style: normal;
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+
+              <div id="u-weights">
+                <a class="toggle block p-2 px-3 font-family-mono font-weight-semibold" href="#show-u-weights">
+                  font-weight
+                </a>
+                <div class="hidden" id="show-u-weights">
+                  <table class="font-family-mono">
+                    <tr>
+                      <td>
+                        .font-weight-hairline
+                      </td>
+                      <td>
+                        font-weight: 100;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .font-weight-thin
+                      </td>
+                      <td>
+                        font-weight: 200;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .font-weight-light
+                      </td>
+                      <td>
+                        font-weight: 300;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .font-weight: normal
+                      </td>
+                      <td>
+                        font-weight: 400;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .font-weight-medium
+                      </td>
+                      <td>
+                        font-weight: 500;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .font-weight-semibold
+                      </td>
+                      <td>
+                        font-weight: 600;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .font-weight-bold
+                      </td>
+                      <td>
+                        font-weight: 700;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .font-weight-extrabold
+                      </td>
+                      <td>
+                        font-weight: 800;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .font-weight-black
+                      </td>
+                      <td>
+                        font-weight: 900;
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+
+              <div id="u-line-height">
+                <a class="toggle block p-2 px-3 font-family-mono font-weight-semibold" href="#show-u-line-height">
+                  line-height
+                </a>
+                <div class="hidden" id="show-u-line-height">
+                  <table class="font-family-mono">
+                    <tr>
+                      <td>
+                        .line-height-xs
+                      </td>
+                      <td>
+                        line-height: 1rem;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .line-height-sm
+                      </td>
+                      <td>
+                        line-height: 1.25rem;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .line-height-base
+                      </td>
+                      <td>
+                        line-height: 1.375rem;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .line-height-lg
+                      </td>
+                      <td>
+                        line-height: 1.5rem;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .line-height-xl
+                      </td>
+                      <td>
+                        line-height: 2rem;
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+
+              <div id="u-list-style-type">
+                <a class="toggle block p-2 px-3 font-family-mono font-weight-semibold" href="#show-u-list-style-type">
+                  list-style-type
+                </a>
+                <div class="hidden" id="show-u-list-style-type">
+                  <table class="font-family-mono">
+                    <tr>
+                      <td>
+                        .list-none
+                      </td>
+                      <td>
+                        list-style-type: none;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .list-disc
+                      </td>
+                      <td>
+                        list-style-type: disc;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .list-decimal
+                      </td>
+                      <td>
+                        list-style-type: decimal;
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+
+              <div id="u-list-style-position">
+                <a class="toggle block p-2 px-3 font-family-mono font-weight-semibold" href="#show-u-list-style-position">
+                  list-style-position
+                </a>
+                <div class="hidden" id="show-u-list-style-position">
+                  <table class="font-family-mono">
+                    <tr>
+                      <td>
+                        .list-inside
+                      </td>
+                      <td>
+                        list-style-position: inside;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .list-outside
+                      </td>
+                      <td>
+                        list-style-position: outside;
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+
+              <div id="u-text-align">
+                <a class="toggle block p-2 px-3 font-family-mono font-weight-semibold" href="#show-u-text-align">
+                  text-align
+                </a>
+                <div class="hidden" id="show-u-text-align">
+                  <table class="font-family-mono">
+                    <tr>
+                      <td>
+                        .text-left
+                      </td>
+                      <td>
+                        text-align: left;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .text-center
+                      </td>
+                      <td>
+                        text-align: center;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .text-right
+                      </td>
+                      <td>
+                        text-align: right;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .text-justify
+                      </td>
+                      <td>
+                        text-align: justify;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+
+                      </td>
+                      <td>
+
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+
+              <div id="u-text-decoration">
+                <a class="toggle block p-2 px-3 font-family-mono font-weight-semibold" href="#show-u-text-decoration">
+                  text-decoration
+                </a>
+                <div class="hidden" id="show-u-text-decoration">
+                  <table class="font-family-mono">
+                    <tr>
+                      <td>
+                        .underline
+                      </td>
+                      <td>
+                        text-decoration: underline;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .line-through
+                      </td>
+                      <td>
+                        text-decoration: line-through;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .no-underline
+                      </td>
+                      <td>
+                        text-decoration: none;
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+
+              <div id="u-text-transform">
+                <a class="toggle block p-2 px-3 font-family-mono font-weight-semibold" href="#show-u-text-transform">
+                  text-transform
+                </a>
+                <div class="hidden" id="show-u-text-transform">
+                  <table class="font-family-mono">
+                    <tr>
+                      <td>
+                        .uppercase
+                      </td>
+                      <td>
+                        text-transform: uppercase;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .lowercase
+                      </td>
+                      <td>
+                        text-transform: lowercase;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .capitalize
+                      </td>
+                      <td>
+                        text-transform: capitalize;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .normal-case
+                      </td>
+                      <td>
+                        text-transform: none;
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="w-full md:w-1/2 px-2">
+
+
+            <div class="bg-white mb-4 section">
+
+              <p class="bg-dark text-white mb-0 p-2 px-3 font-size-base">
+                Flexbox
+              </p>
+
+              <div id="u-flex-align-content">
+                <a class="toggle block p-2 px-3 font-family-mono font-weight-semibold" href="#show-u-flex-align-content">
+                  align-content
+                </a>
+                <div class="hidden" id="show-u-flex-align-content">
+                  <table class="font-family-mono">
+                    <tr>
+                      <td>
+                        .content-start
+                      </td>
+                      <td>
+                        align-content: flex-start;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .content-center
+                      </td>
+                      <td>
+                        align-content: center;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .content-end
+                      </td>
+                      <td>
+                        align-content: flex-end;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .content-between
+                      </td>
+                      <td>
+                        align-content: space-between;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .content-around
+                      </td>
+                      <td>
+                        align-content: space-around;
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+
+              <div id="u-flex-align-items">
+                <a class="toggle block p-2 px-3 font-family-mono font-weight-semibold" href="#show-u-flex-align-items">
+                  align-items
+                </a>
+                <div class="hidden" id="show-u-flex-align-items">
+                  <table class="font-family-mono">
+                    <tr>
+                      <td>
+                        .items-stretch
+                      </td>
+                      <td>
+                        align-items: stretch;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .items-start
+                      </td>
+                      <td>
+                        align-items: stretch;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .items-center
+                      </td>
+                      <td>
+                        align-items: center;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .items-end
+                      </td>
+                      <td>
+                        align-items: flex-end;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .items-baseline
+                      </td>
+                      <td>
+                        align-items: baseline;
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+
+              <div id="u-flex-align-self">
+                <a class="toggle block p-2 px-3 font-family-mono font-weight-semibold" href="#show-u-flex-align-self">
+                  align-self
+                </a>
+                <div class="hidden" id="show-u-flex-align-self">
+                  <table class="font-family-mono">
+                    <tr>
+                      <td>
+                        .self-auto
+                      </td>
+                      <td>
+                        align-self: auto;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .self-start
+                      </td>
+                      <td>
+                        align-self: flex-start;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .self-center
+                      </td>
+                      <td>
+                        align-self: center;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .self-end
+                      </td>
+                      <td>
+                        align-self: flex-end;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .self-stretch
+                      </td>
+                      <td>
+                        align-self: stretch;
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+
+              <div id="u-flex">
+                <a class="toggle block p-2 px-3 font-family-mono font-weight-semibold" href="#show-u-flex">
+                  flex
+                </a>
+                <div class="hidden" id="show-u-flex">
+                  <table class="font-family-mono">
+                    <tr>
+                      <td>
+                        .flex-initial
+                      </td>
+                      <td>
+                        flex: 0 1 auto;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .flex-1
+                      </td>
+                      <td>
+                        flex: 1 1 0%;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .flex-auto
+                      </td>
+                      <td>
+                        flex: 1 1 auto;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .flex-none
+                      </td>
+                      <td>
+                        flex: none;
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+
+              <div id="u-flex-direction">
+                <a class="toggle block p-2 px-3 font-family-mono font-weight-semibold" href="#show-u-flex-direction">
+                  flex-direction
+                </a>
+                <div class="hidden" id="show-u-flex-direction">
+                  <table class="font-family-mono">
+                    <tr>
+                      <td>
+                        .flex-row
+                      </td>
+                      <td>
+                        flex-direction: row;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .flex-row-reverse
+                      </td>
+                      <td>
+                        flex-direction: row-reverse;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .flex-col
+                      </td>
+                      <td>
+                        flex-direction: column;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .flex-col-reverse
+                      </td>
+                      <td>
+                        flex-direction: column-reverse;
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+
+              <div id="u-flex-grow">
+                <a class="toggle block p-2 px-3 font-family-mono font-weight-semibold" href="#show-u-flex-grow">
+                  flex-grow
+                </a>
+                <div class="hidden" id="show-u-flex-grow">
+                  <table class="font-family-mono">
+                    <tr>
+                      <td>
+                        .flex-grow
+                      </td>
+                      <td>
+                        flex-grow: 1;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .flex-grow-0
+                      </td>
+                      <td>
+                        flex-grow: 0;
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+
+              <div id="u-flex-shrink">
+                <a class="toggle block p-2 px-3 font-family-mono font-weight-semibold" href="#show-u-flex-shrink">
+                  flex-shrink
+                </a>
+                <div class="hidden" id="show-u-flex-shrink">
+                  <table class="font-family-mono">
+                    <tr>
+                      <td>
+                        .flex-shrink
+                      </td>
+                      <td>
+                        flex-shrink: 1;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .flex-shrink-0
+                      </td>
+                      <td>
+                        flex-shrink: 0;
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+
+              <div id="u-flex-wrap">
+                <a class="toggle block p-2 px-3 font-family-mono font-weight-semibold" href="#show-u-flex-wrap">
+                  flex-wrap
+                </a>
+                <div class="hidden" id="show-u-flex-wrap">
+                  <table class="font-family-mono">
+                    <tr>
+                      <td>
+                        .flex-no-wrap
+                      </td>
+                      <td>
+                        flex-wrap: nowrap;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .flex-wrap
+                      </td>
+                      <td>
+                        flex-wrap: wrap;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .flex-wrap-reverse
+                      </td>
+                      <td>
+                        flex-wrap: wrap-reverse;
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+
+              <div id="u-flex-justify-content">
+                <a class="toggle block p-2 px-3 font-family-mono font-weight-semibold" href="#show-u-flex-justify-content">
+                  flex-justify-content
+                </a>
+                <div class="hidden" id="show-u-flex-justify-content">
+                  <table class="font-family-mono">
+                    <tr>
+                      <td>
+                        .justify-start
+                      </td>
+                      <td>
+                        justify-content: flex-start;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .justify-content
+                      </td>
+                      <td>
+                        flex-start;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .justify-center
+                      </td>
+                      <td>
+                        justify-content: center;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .justify-end
+                      </td>
+                      <td>
+                        justify-content: flex-end;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .justify-between
+                      </td>
+                      <td>
+                        justify-content: space-between;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .justify-around
+                      </td>
+                      <td>
+                        justify-content: space-around;
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+
+              <div id="u-flex-order">
+                <a class="toggle block p-2 px-3 font-family-mono font-weight-semibold" href="#show-u-flex-order">
+                  order
+                </a>
+                <div class="hidden" id="show-u-flex-order">
+                  <table class="font-family-mono">
+                    <tr>
+                      <td>
+                        .order-first
+                      </td>
+                      <td>
+                        order: -9999;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .order-last
+                      </td>
+                      <td>
+                        order: 9999;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .order-none
+                      </td>
+                      <td>
+                        order: 0;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .order-1
+                      </td>
+                      <td>
+                        order: 1;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .order-2
+                      </td>
+                      <td>
+                        order: 2;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .order-3
+                      </td>
+                      <td>
+                        order: 3;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .order-4
+                      </td>
+                      <td>
+                        order: 4;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .order-5
+                      </td>
+                      <td>
+                        order: 5;
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="bg-white mb-4 section">
+
+              <p class="bg-dark text-white mb-0 p-2 px-3 font-size-base">
+                Spacing
+              </p>
+
+              <div id="u-spacing-overview">
+                <a class="toggle block p-2 px-3 font-family-mono font-weight-semibold" href="#show-u-spacing-overview">
+                  Overview
+                </a>
+                <div class="hidden font-size-sm" id="show-u-spacing-overview">
+                  <div class="ml-3">
+                    <p class="mb-0 py-4">
+                      Utilities for controlling an element's padding and margin.
+                    </p>
+                    <p class="mb-2">
+                      <code class="text-secondary">.{property}{side}-{size}</code>
+                    </p>
+                    <p class="mb-8">
+                      <code class="text-secondary">.{screen}:{property}{side}-{size}</code>
+                    </p>
+                    <div class="flex flex-wrap -mx-2">
+                      <div class="w-1/3 px-2">
+                        <p>
+                          <strong>Property</strong>
+                        </p>
+                        <ul class="list-none m-0 p-0 text-sm">
+                          <li>
+                            <code class="demo-square inline-block mr-1 mb-1 p-2 line-height-none">p</code> padding
+                          </li>
+                          <li>
+                            <code class="demo-square inline-block mr-1 mb-1 p-2 line-height-none">m</code> margin
+                          </li>
+                        </ul>
+                      </div>
+                      <div class="w-1/3 px-2">
+                        <p>
+                          <strong>Side</strong>
+                        </p>
+                        <ul class="list-none m-0 p-0 text-sm">
+                          <li>
+                            <code class="demo-square inline-block mr-1 mb-1 p-2 line-height-none">&nbsp;</code> all
+                          </li>
+                          <li>
+                            <code class="demo-square inline-block mr-1 mb-1 p-2 line-height-none">t</code> top
+                          </li>
+                          <li>
+                            <code class="demo-square inline-block mr-1 mb-1 p-2 line-height-none">r</code> right
+                          </li>
+                          <li>
+                            <code class="demo-square inline-block mr-1 mb-1 p-2 line-height-none">b</code> bottom
+                          </li>
+                          <li>
+                            <code class="demo-square inline-block mr-1 mb-1 p-2 line-height-none">l</code> left
+                          </li>
+                          <li>
+                            <code class="demo-square inline-block mr-1 mb-1 p-2 line-height-none">x</code> horizontal
+                          </li>
+                          <li>
+                            <code class="demo-square inline-block mr-1 mb-1 p-2 line-height-none">y</code> vertical
+                          </li>
+                        </ul>
+                      </div>
+                      <div class="w-1/3 px-2">
+                        <p>
+                          <strong>Space</strong>
+                        </p>
+                        <ul class="list-none m-0 p-0 text-sm mb-6">
+                          <li>
+                            <code class="demo-square inline-block mr-1 mb-1 p-2 line-height-none">0</code> 0
+                          </li>
+                          <li>
+                            <code class="demo-square inline-block mr-1 mb-1 p-2 line-height-none">1</code> .25rem
+                          </li>
+                          <li>
+                            <code class="demo-square inline-block mr-1 mb-1 p-2 line-height-none">2</code> .5rem
+                          </li>
+                          <li>
+                            <code class="demo-square inline-block mr-1 mb-1 p-2 line-height-none">3</code> .75rem
+                          </li>
+                          <li>
+                            <code class="demo-square inline-block mr-1 mb-1 p-2 line-height-none">4</code> 1rem
+                          </li>
+                          <li>
+                            <code class="demo-square inline-block mr-1 mb-1 p-2 line-height-none">5</code> 1.25rem
+                          </li>
+                          <li>
+                            <code class="demo-square inline-block mr-1 mb-1 p-2 line-height-none">6</code> 1.5rem
+                          </li>
+                          <li>
+                            <code class="demo-square inline-block mr-1 mb-1 p-2 line-height-none">8</code> 2rem
+                          </li>
+                          <li>
+                            <code class="demo-square inline-block mr-1 mb-1 p-2 line-height-none">12</code> 3rem
+                          </li>
+                          <li>
+                            <code class="demo-square inline-block mr-1 mb-1 p-2 line-height-none">auto</code> auto <span class="text-xs">(margins only)</span>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div id="u-spacing-margin">
+                <a class="toggle block p-2 px-3 font-family-mono font-weight-semibold" href="#show-u-spacing-margin">
+                  margin
+                </a>
+                <div class="hidden" id="show-u-spacing-margin">
+                  <p class="font-size-sm py-4 mb-0 ml-3">
+                    Negative margins start with <span class="text-secondary">-m{side?}-{size}</span><br>e.g. <span class="text-secondary">-mx-2</span> or <span class="text-secondary">-mt-8</span>
+                  </p>
+                  <table class="font-family-mono">
+                    <tr>
+                      <td>
+                        .m-0
+                      </td>
+                      <td>
+                        margin: 0;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .m-1
+                      </td>
+                      <td>
+                        margin: 0.25rem;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .m-2
+                      </td>
+                      <td>
+                        margin: 0.5rem;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .m-3
+                      </td>
+                      <td>
+                        margin: 0.75rem;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .m-4
+                      </td>
+                      <td>
+                        margin: 1rem;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .m-5
+                      </td>
+                      <td>
+                        margin: 1.25rem;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .m-6
+                      </td>
+                      <td>
+                        margin: 1.5rem;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .m-8
+                      </td>
+                      <td>
+                        margin: 2rem;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .m-12
+                      </td>
+                      <td>
+                        margin: 3rem;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .my-0
+                      </td>
+                      <td>
+                        margin-top: 0;<br>margin-bottom: 0;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        ...
+                      </td>
+                      <td>
+
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .my-12
+                      </td>
+                      <td>
+                        margin-top: 3rem;<br>margin-bottom: 3rem;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .mx-0
+                      </td>
+                      <td>
+                        margin-left: 0;<br>margin-right: 0;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        ...
+                      </td>
+                      <td>
+
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .mx-12
+                      </td>
+                      <td>
+                        margin-left: 3rem;<br>margin-right: 3rem;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .mt-0
+                      </td>
+                      <td>
+                        margin-top: 0;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        ...
+                      </td>
+                      <td>
+
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .mt-12
+                      </td>
+                      <td>
+                        margin-top: 3rem;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .mr-0
+                      </td>
+                      <td>
+                        margin-right: 0;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        ...
+                      </td>
+                      <td>
+
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .mr-12
+                      </td>
+                      <td>
+                        margin-right: 3rem;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .mb-0
+                      </td>
+                      <td>
+                        margin-bottom: 0;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        ...
+                      </td>
+                      <td>
+
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .mb-12
+                      </td>
+                      <td>
+                        margin-bottom: 3rem;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .ml-0
+                      </td>
+                      <td>
+                        margin-left: 0;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        ...
+                      </td>
+                      <td>
+
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .ml-12
+                      </td>
+                      <td>
+                        margin-left: 3rem;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .m-auto
+                      </td>
+                      <td>
+                        margin: auto;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .mx-auto
+                      </td>
+                      <td>
+                        margin-left: auto;<br>margin-right: auto;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .my-auto
+                      </td>
+                      <td>
+                        margin-top: auto;<br>margin-bottom: auto;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .mt-auto
+                      </td>
+                      <td>
+                        margin-top: auto;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .mr-auto
+                      </td>
+                      <td>
+                        margin-right: auto;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .mb-auto
+                      </td>
+                      <td>
+                        margin-bottom: auto;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .ml-auto
+                      </td>
+                      <td>
+                        margin-left: auto;
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+
+              <div id="u-spacing-padding">
+                <a class="toggle block p-2 px-3 font-family-mono font-weight-semibold" href="#show-u-spacing-padding">
+                  padding
+                </a>
+                <div class="hidden" id="show-u-spacing-padding">
+                  <table class="font-family-mono">
+                    <tr>
+                      <td>
+                        .p-0
+                      </td>
+                      <td>
+                        padding: 0;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .p-1
+                      </td>
+                      <td>
+                        padding: 0.25rem;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .p-2
+                      </td>
+                      <td>
+                        padding: 0.5rem;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .p-3
+                      </td>
+                      <td>
+                        padding: 0.75rem;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .p-4
+                      </td>
+                      <td>
+                        padding: 1rem;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .p-5
+                      </td>
+                      <td>
+                        padding: 1.25rem;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .p-6
+                      </td>
+                      <td>
+                        padding: 1.5rem;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .p-8
+                      </td>
+                      <td>
+                        padding: 2rem;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .p-12
+                      </td>
+                      <td>
+                        padding: 3rem;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .py-0
+                      </td>
+                      <td>
+                        padding-top: 0;<br>padding-bottom: 0;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        ...
+                      </td>
+                      <td>
+
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .py-12
+                      </td>
+                      <td>
+                        padding-top: 3rem;<br>padding-bottom: 3rem;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .px-0
+                      </td>
+                      <td>
+                        padding-left: 0;<br>padding-right: 0;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        ...
+                      </td>
+                      <td>
+
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .px-12
+                      </td>
+                      <td>
+                        padding-left: 3rem;<br>padding-right: 3rem;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .pt-0
+                      </td>
+                      <td>
+                        padding-top: 0;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        ...
+                      </td>
+                      <td>
+
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .pt-12
+                      </td>
+                      <td>
+                        padding-top: 3rem;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .pr-0
+                      </td>
+                      <td>
+                        padding-right: 0;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        ...
+                      </td>
+                      <td>
+
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .pr-12
+                      </td>
+                      <td>
+                        padding-right: 3rem;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .pb-0
+                      </td>
+                      <td>
+                        padding-bottom: 0;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        ...
+                      </td>
+                      <td>
+
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .pb-12
+                      </td>
+                      <td>
+                        padding-bottom: 3rem;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .pl-0
+                      </td>
+                      <td>
+                        padding-left: 0;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        ...
+                      </td>
+                      <td>
+
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .pl-12
+                      </td>
+                      <td>
+                        padding-left: 3rem;
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="bg-white mb-4 section">
+
+              <p class="bg-dark text-white mb-0 p-2 px-3 font-size-base">
+                Mixins
+              </p>
+
+              <div id="m-make-responsive">
+                <a class="toggle block p-2 px-3 font-family-mono font-weight-semibold" href="#show-make-responsive">
+                  Make Responsive
+                </a>
+                <div class="hidden" id="show-make-responsive">
+                  <div class="highlight">
+                    <pre><code class="scss">
+$body-font-size: (
+  xs: 10px,
+  sm: 14px,
+  md: 18px,
+  lg: 22px,
+  xl: 26px,
+  xxl: 30px
+);
+
+$body-padding-top: (
+  xs: 10px,
+  sm: 20px,
+  md: 30px,
+  lg: 40px,
+  xl: 50px,
+  xxl: 60px
+);
+
+body {
+  @include make-responsive(font-size, $body-font-size);
+  @include make-responsive(padding-top, $body-padding-top);
+}
+                    </code></pre>
+                  </div>
+                </div>
+              </div>
+
+              <div id="u-ratio">
+                <a class="toggle block p-2 px-3 font-family-mono font-weight-semibold" href="#show-u-ratio">
+                  Ratio
+                </a>
+                <div class="hidden" id="show-u-ratio">
+                  <table class="font-family-mono">
+                    <tr>
+                      <td>
+                        .ratio-3-4
+                      </td>
+                      <td>
+                        &lt;div class=&quot;ratio-3-4&quot; style=&quot;background-image: url(&apos;...&apos;)&quot;&gt;&lt;/div&gt;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .ratio-4-3
+                      </td>
+                      <td>
+                        &lt;div class=&quot;ratio-4-3&quot; style=&quot;background-image: url(&apos;...&apos;)&quot;&gt;&lt;/div&gt;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        .ratio-16-9
+                      </td>
+                      <td>
+                        &lt;div class=&quot;ratio-16-9&quot; style=&quot;background-image: url(&apos;...&apos;)&quot;&gt;&lt;/div&gt;
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="bg-white mb-4 section">
+
+              <p class="bg-dark text-white mb-0 p-2 px-3 font-size-base">
+                Components
+              </p>
+
+              <div id="c-buttons">
+                <a class="toggle block p-2 px-3 font-family-mono font-weight-semibold" href="#show-c-buttons">
+                  Buttons
+                </a>
+                <div class="hidden" id="show-c-buttons">
+                  <div class="buttons pt-4">
+                    <p class="ml-3">
+                      <button class="btn">Button</button>
+                      <button class="btn" disabled>Button Disabled</button>
+                    </p>
+                    <div class="highlight mb-12">
+                      <pre><code class="html">
+&lt;button class=&quot;btn&quot;&gt;Button&lt;/button&gt;
+&lt;button class=&quot;btn&quot; disabled&gt;Button Disabled&lt;/button&gt;
+                      </code></pre>
+                    </div>
+
+                    <p class="ml-3">
+                      <a href="#" class="btn btn-sm">Button SM</a>
+                      <a href="#" class="btn">Button</a>
+                      <a href="#" class="btn btn-lg">Button LG</a>
+                    </p>
+                    <div class="highlight mb-12">
+                      <pre><code class="html">
+&lt;a href=&quot;#&quot; class=&quot;btn btn-sm&quot;&gt;Button SM&lt;/a&gt;
+&lt;a href=&quot;#&quot; class=&quot;btn&quot;&gt;Button&lt;/a&gt;
+&lt;a href=&quot;#&quot; class=&quot;btn btn-lg&quot;&gt;Button LG&lt;/a&gt;
+                      </code></pre>
+                    </div>
+
+                    <p class="ml-3">
+                      <a href="#" class="btn btn-outline">Button Outline</a>
+                    </p>
+                    <p class="ml-3">
+                      <a href="#" class="btn btn-link">Button Link</a>
+                    </p>
+                    <p class="ml-3">
+                      <a href="#" class="btn btn-block">Button Block</a>
+                    </p>
+
+                    <div class="highlight mb-12">
+                      <pre><code class="html">
+&lt;a href=&quot;#&quot; class=&quot;btn btn-outline&quot;&gt;Button Outline&lt;/a&gt;
+&lt;a href=&quot;#&quot; class=&quot;btn btn-link&quot;&gt;Button Link&lt;/a&gt;
+&lt;a href=&quot;#&quot; class=&quot;btn btn-block&quot;&gt;Button Block&lt;/a&gt;
+                      </code></pre>
+                    </div>
+
+                    <p class="ml-3">
+                      <a href="#" class="btn btn-primary">Primary</a>
+                      <a href="#" class="btn btn-secondary">Secondary</a>
+                      <a href="#" class="btn btn-success">Success</a>
+                      <a href="#" class="btn btn-error">Error</a>
+                      <a href="#" class="btn btn-white">White</a>
+                      <a href="#" class="btn btn-black">Black</a>
+                    </p>
+                    <p class="ml-3">
+                      <a href="#" class="btn btn-outline btn-primary">Primary</a>
+                      <a href="#" class="btn btn-outline btn-secondary">Secondary</a>
+                      <a href="#" class="btn btn-outline btn-success">Success</a>
+                      <a href="#" class="btn btn-outline btn-error">Error</a>
+                      <a href="#" class="btn btn-outline btn-white">White</a>
+                      <a href="#" class="btn btn-outline btn-black">Black</a>
+                    </p>
+                    <p class="ml-3">
+                      <a href="#" class="btn btn-link btn-primary">Primary</a>
+                      <a href="#" class="btn btn-link btn-secondary">Secondary</a>
+                      <a href="#" class="btn btn-link btn-success">Success</a>
+                      <a href="#" class="btn btn-link btn-error">Error</a>
+                      <a href="#" class="btn btn-link btn-white">White</a>
+                      <a href="#" class="btn btn-link btn-black">Black</a>
+                    </p>
+
+                    <div class="highlight">
+                      <pre><code class="html">
+&lt;a href=&quot;#&quot; class=&quot;btn btn-primary&quot;&gt;Primary&lt;/a&gt;
+&lt;a href=&quot;#&quot; class=&quot;btn btn-secondary&quot;&gt;Secondary&lt;/a&gt;
+&lt;a href=&quot;#&quot; class=&quot;btn btn-success&quot;&gt;Success&lt;/a&gt;
+&lt;a href=&quot;#&quot; class=&quot;btn btn-error&quot;&gt;Error&lt;/a&gt;
+&lt;a href=&quot;#&quot; class=&quot;btn btn-white&quot;&gt;White&lt;/a&gt;
+&lt;a href=&quot;#&quot; class=&quot;btn btn-black&quot;&gt;Black&lt;/a&gt;
+
+&lt;a href=&quot;#&quot; class=&quot;btn btn-outline btn-primary&quot;&gt;Primary&lt;/a&gt;
+&lt;a href=&quot;#&quot; class=&quot;btn btn-outline btn-secondary&quot;&gt;Secondary&lt;/a&gt;
+&lt;a href=&quot;#&quot; class=&quot;btn btn-outline btn-success&quot;&gt;Success&lt;/a&gt;
+&lt;a href=&quot;#&quot; class=&quot;btn btn-outline btn-error&quot;&gt;Error&lt;/a&gt;
+&lt;a href=&quot;#&quot; class=&quot;btn btn-outline btn-white&quot;&gt;White&lt;/a&gt;
+&lt;a href=&quot;#&quot; class=&quot;btn btn-outline btn-black&quot;&gt;Black&lt;/a&gt;
+
+&lt;a href=&quot;#&quot; class=&quot;btn btn-link btn-primary&quot;&gt;Primary&lt;/a&gt;
+&lt;a href=&quot;#&quot; class=&quot;btn btn-link btn-secondary&quot;&gt;Secondary&lt;/a&gt;
+&lt;a href=&quot;#&quot; class=&quot;btn btn-link btn-success&quot;&gt;Success&lt;/a&gt;
+&lt;a href=&quot;#&quot; class=&quot;btn btn-link btn-error&quot;&gt;Error&lt;/a&gt;
+&lt;a href=&quot;#&quot; class=&quot;btn btn-link btn-white&quot;&gt;White&lt;/a&gt;
+&lt;a href=&quot;#&quot; class=&quot;btn btn-link btn-black&quot;&gt;Black&lt;/a&gt;
+                      </code></pre>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div id="c-grids">
+                <a class="toggle block p-2 px-3 font-family-mono font-weight-semibold" href="#show-c-grids">
+                  Grids
+                </a>
+                <div class="hidden" id="show-c-grids">
+                  <div class="py-4">
+                    <div class="flex flex-wrap -mx-2">
+                      <div class="w-full md:w-1/3 px-2">
+                        <div class="bg-light p-2">1</div>
+                      </div>
+                      <div class="w-full md:w-1/3 px-2">
+                        <div class="bg-light p-2">2</div>
+                      </div>
+                      <div class="w-full md:w-1/3 px-2">
+                        <div class="bg-light p-2">3</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="highlight">
+                    <pre><code class="html">
+&lt;div class=&quot;flex flex-wrap -mx-2&quot;&gt;
+  &lt;div class=&quot;w-full md:w-1/3 px-2&quot;&gt;
+    &lt;div class=&quot;bg-light p-2&quot;&gt;1&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;w-full md:w-1/3 px-2&quot;&gt;
+    &lt;div class=&quot;bg-light p-2&quot;&gt;2&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;w-full md:w-1/3 px-2&quot;&gt;
+    &lt;div class=&quot;bg-light p-2&quot;&gt;3&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+                    </code></pre>
+                  </div>
+                </div>
+              </div>
+
+              <div id="c-list-reset">
+                <a class="toggle block p-2 px-3 font-family-mono font-weight-semibold" href="#show-c-list-reset">
+                  List Reset
+                </a>
+                <div class="hidden" id="show-c-list-reset">
+                  <div class="highlight">
+                    <pre><code class="html">
+&lt;ul class=&quot;list-none m-0 p-0&quot;&gt;
+  &lt;li&gt;Item 1&lt;/li&gt;
+  &lt;li&gt;Item 2&lt;/li&gt;
+&lt;/ul&gt;
+                    </code></pre>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="bg-white mb-4 section">
+
+              <p class="bg-dark text-white mb-0 p-2 px-3 font-size-base">
+                Templates
+              </p>
+
+              <a class="block p-2 px-3 font-family-mono font-weight-semibold" href="preview.html">
+                Index Preview
+              </a>
+              <a class="block p-2 px-3 font-family-mono font-weight-semibold" href="starter.html">
+                Starter
+              </a>
+            </div>
+
+            <p class="font-size-base text-right">
+              <a href="https://github.com/tomaszbujnowicz/hybrid-utility-itcss">
+                Github
+              </a>
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- https://highlightjs.org/ -->
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.9/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.9/languages/scss.min.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad();
+  </script>
+
+  <!--
+    How to show and hide elements with vanilla JavaScript
+    https://gomakethings.com/how-to-show-and-hide-elements-with-vanilla-javascript/
+  -->
+  <script>
+    // Show an element
+    var show = function(elem) {
+      elem.style.display = 'block';
+    };
+
+    // Hide an element
+    var hide = function(elem) {
+      elem.style.display = 'none';
+    };
+
+    // Toggle element visibility
+    var toggle = function(elem) {
+
+      // If the element is visible, hide it
+      if (window.getComputedStyle(elem).display === 'block') {
+        hide(elem);
+        return;
+      }
+
+      // Otherwise, show it
+      show(elem);
+
+    };
+
+    // Listen for click events
+    document.addEventListener('click', function(event) {
+
+      // Make sure clicked element is our toggle
+      if (!event.target.classList.contains('toggle')) return;
+
+      // Prevent default link behavior
+      event.preventDefault();
+
+      // Get the content
+      var content = document.querySelector(event.target.hash);
+      if (!content) return;
+
+      // Toggle the content
+      toggle(content);
+      event.target.classList.toggle('toggled');
+
+    }, false);
+  </script>
+
+
+  <script src="js/app.js"></script>
+
+</body>
+
+</html>

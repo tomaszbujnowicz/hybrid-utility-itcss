@@ -1,9 +1,0 @@
-/**
- * Ratio
- */
-
-@each $key, $ratio in $ratios {
-  .ratio-#{$key} {
-    @include ratio(map-get($ratio, x), map-get($ratio, y));
-  }
-}
