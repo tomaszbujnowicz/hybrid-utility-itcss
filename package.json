@@ -27,8 +27,6 @@
     "gulp-sourcemaps": "^2.6.5",
     "gulp-stylelint": "^9.0.0",
     "gulp-twig": "^1.2.0",
-    "lodash.debounce": "^4.0.8",
-    "lodash.throttle": "^4.1.1",
     "node-notifier": "^5.4.1",
     "sass-loader": "^7.2.0",
     "style-loader": "^1.0.0",
