@@ -380,10 +380,13 @@ $paragraph-margin-bottom: 1rem !default;
                   <div class="font-size-sm px-3">
                     <p class="pt-4">
                       Customize responsiveness (true by default), attributes, classes etc.
+                      <br>
+                      You can reduce file size by removing unused breakpoints
+                      or disabling unused utilities.
                     </p>
                     <p>
-                      You can reduce file size by removing unused breakpoints
-                      or disabling unused utilities. Controlling file size:
+                      Controlling file size:
+                    </p>
                     </p>
                     <ul>
                       <li>
@@ -400,27 +403,27 @@ $paragraph-margin-bottom: 1rem !default;
                       </li>
                     </ul>
                     <p>
-                      File size:
+                      File size comparision:
                     </p>
                     <ul>
                       <li>
-                        Including utilities with responsiveness: 85kb
+                        Utilities with responsiveness: 85kb (default)
                       </li>
                       <li>
-                        Including utilities without responsiveness: 23kb
+                        Utilities without responsiveness: 23kb
                       </li>
                       <li>
                         No utilities (raw ITCSS): 12kb
                       </li>
                       <li>
-                        Including utilties with responsiveness (layout only): 28kb
+                        Utilities with responsiveness (layout only): 28kb
                       </li>
                       <li>
-                        Including utilities with responsiveness (layout + flexbox): 36kb
+                        Utilities with responsiveness (layout + flexbox): 36kb
                       </li>
                     </ul>
                     <p>
-                      Note: Spacing utilities (margin/padding) with responsiveness enabled add a lot to file size so consider whether you need them all.
+                      Tip: you can significantly reduce the file size when you disable responsiveness of margin/padding utility classes.
                     </p>
                   </div>
                 </div>
