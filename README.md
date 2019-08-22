@@ -44,20 +44,33 @@ Clone this repository and run
 |
 |--gulpfile.babel.js/      # →  Gulpfile config and tasks
 |--node_modules/           # →  Node.js packages (never edit)
+|
 |--src/                    # →  Source files
 |  |--assets/              # →  Assets
 |  |  |--fonts/            # →  Assets: Fonts
 |  |  |--img/              # →  Assets: Images
+|
 |  |--scripts/             # →  JS
-|  |  |--components/       # →  JS: Components
-|  |  |--utils/            # →  JS: Utils
-|  |  |--app.js            # →  JS: Main file
+|  |  |--components/       # →  Components
+|  |  |--utils/            # →  Utils
+|  |  |--app.js            # →  Main file
+|
 |  |--styles/              # →  Styles: ITCSS Architecture + CSS Utilities
-|  |  |--main.scss         # →  Styles: Main stylesheet file
-|  |--templates/           # →  Site templates (Twig.js)
-|  |  |--layouts/          # →  Templates: Layouts
-|  |  |--components/       # →  Templates: Components
-|  |  |--pages/            # →  Templates: Pages
+|  |  |--1-settings/       # →  Settings
+|  |  |--2-tools/          # →  Tools
+|  |  |--3-generic/        # →  Generic
+|  |  |--4-elements/       # →  Elements
+|  |  |--5-objects/        # →  Objects
+|  |  |--6-components/     # →  Components
+|  |  |--7-modules/        # →  Modules
+|  |  |--8-utilities/      # →  Utilities
+|  |  |--main.scss         # →  Main file
+|
+|  |--templates/           # →  Templates (Twig.js)
+|  |  |--layouts/          # →  Layouts
+|  |  |--components/       # →  Components
+|  |  |--pages/            # →  Pages
+|
 |--.babelrc                # →  Babel presets
 |--.browserslistrc         # →  Browserslist config, browsers that we support
 |--.eslintrc               # →  ESLint config
